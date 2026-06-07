@@ -1,5 +1,5 @@
 
-.login-container {
+.Login-contenedor {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -13,7 +13,7 @@
     gap: 8px;
 }
 
-.login-form {
+.Login-formulario {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
@@ -26,7 +26,7 @@
     border-radius: 12px;
 }
 
-.login-form input {
+.Login-formulario input {
     padding: 8px;
     border-radius: 12px;
     border: none;
