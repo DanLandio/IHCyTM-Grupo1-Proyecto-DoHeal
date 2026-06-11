@@ -1,0 +1,70 @@
+header {
+    background: #2563ee;;
+    padding: 1rem;
+    color: white;
+}
+
+
+nav {
+    display: none;
+    flex-direction: column !important;
+    gap: 8px;
+    padding: 1rem;
+}
+
+nav a {
+    background: #60A5FA;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    border-radius: 12px;
+    padding: 4px 16px;
+    text-decoration: none;
+}
+
+nav.active {
+    display: flex;
+}
+
+
+.hamburguesa {
+    display: flex;
+    font-size: 24px;
+    background: none;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.hamburguesa a {
+    align-items: center;
+}
+
+.header-plataforma {
+    border-bottom-left-radius: 24px;
+    border-bottom-right-radius: 24px;
+}
+
+.elementos-header-plataforma {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+
+.elementos-header-plataforma div{
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    align-items: center;
+}
+
+.izquierda {
+    display: flex;
+    margin-right: auto;
+}
+
+.derecha {
+    display: flex;
+    margin-left: auto;
+}
