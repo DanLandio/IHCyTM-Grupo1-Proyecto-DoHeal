@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documento</title>
+    <link rel="stylesheet" href="../Estilos/estiloComplementoDoHeal.css">
+    <link rel="stylesheet" href="../Estilos/estiloPlataformaDoHeal.css">
+    <script src="../Scripts/scriptPlataforma.js"></script>
+</head>
+
+<body>
+    <header class="header-plataforma">
+        <div class="elementos-header-plataforma">
+            
+            <div class="izquierda">
+                <button class="hamburguesa" id="boton-hamburguesa" onclick="abreMenuHamburguesa()">
+                ☰
+                </button>
+                <img src="../Recursos/Imagenes/logo-doheal-blanco-cortado.png" style="width: 4rem; height: auto;">
+                <h1>Do-Heal</h1>
+            </div>
+            <div class="derecha" style="margin-right: 24px;">
+                <h2>Usuario</h2>
+                <img src="../Recursos/Iconos/campana.svg" style="width: 2rem; height: auto;">
+                <img src="../Recursos/Iconos/engranaje.svg" style="width: 2rem; height: auto;">
+            </div>
+        </div>
+        
+
+        <nav id="menu-hamburguesa">
+            <a href="#">
+                <img src="../Recursos/Iconos/casa.svg" class="icono">
+                Inicio
+            </a>
+            <a href="#">
+                <img src="../Recursos/Iconos/pildora.svg" class="icono">
+                Salud
+            </a>
+            <a href="#">
+                <img src="../Recursos/Iconos/lupa.svg" class="icono">
+                Buscar
+            </a>
+            <a href="#">
+                <img src="../Recursos/Iconos/correo.svg" class="icono">
+                Solicitudes
+            </a>
+            <a href="#">
+                <img src="../Recursos/Iconos/usuario.svg" class="icono">
+                Perfil
+            </a>
+        </nav>
+        
+        </header>
+    <section class="seccion-plataforma">
+        <div class="contenedor-plataforma ">
+            <h1>Hola, Usuario</h1>
+            <h2>Bienvenido a Do-Heal</h2>
+            <h2 class="espaciado">Acciones</h2>
+            <div class="ordenar-horizontal">
+                <div class="boton-inicio">
+                    <img src="../Recursos/Iconos/lupa.svg">
+                    <h3>Buscar medicamentos</h3>
+                </div>
+                <div class="boton-inicio">
+                    <img src="../Recursos/Iconos/pildora.svg">
+                    <h3>Registrar una medicina</h3>
+                </div>
+                <div class="boton-inicio">
+                    <img src="../Recursos/Iconos/usuarios.svg">
+                    <h3>Buscar donantes</h3>
+                </div>
+                <div class="boton-inicio">
+                    <img src="../Recursos/Iconos/almacen.svg">
+                    <h3>Ver medicinas registradas</h3>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

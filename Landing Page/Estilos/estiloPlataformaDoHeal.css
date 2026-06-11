@@ -1,0 +1,164 @@
+header {
+    background: #2563ee;;
+    padding: 1rem;
+    color: white;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+
+nav {
+    display: none;
+    flex-direction: column !important;
+    gap: 8px;
+    padding: 1rem;
+    position: absolute;
+    background:#2563ee ;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+nav a {
+    background: #60A5FA;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    border-radius: 12px;
+    padding: 4px 16px;
+    text-decoration: none;
+}
+
+nav.active {
+    display: flex;
+}
+
+.hamburguesa.active {
+    background-color: #60A5FA;
+}
+
+.hamburguesa {
+    display: flex;
+    font-size: 24px;
+    background: none;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.hamburguesa a {
+    align-items: center;
+}
+
+.header-plataforma {
+    border-bottom-left-radius: 24px;
+    border-bottom-right-radius: 24px;
+}
+
+.elementos-header-plataforma {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+
+.elementos-header-plataforma div{
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    align-items: center;
+}
+
+.izquierda {
+    display: flex;
+    margin-right: auto;
+}
+
+.derecha {
+    display: flex;
+    margin-left: auto;
+}
+
+.seccion-plataforma {
+    display: flex;
+    margin: 8px;
+    padding: 8px;
+    min-height: 0;
+    flex: 1;
+}
+
+.contenedor-plataforma {
+    flex: 1;
+    text-align: center;
+}
+
+.ordenar-horizontal {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 4rem;
+}
+
+
+/*Elementos pestaña inciio*/
+.boton-inicio {
+    background: #2563ee;
+    background: #60A5FA;
+    display: flex;
+    flex: 1 1 200px;
+    aspect-ratio: 1/1;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 8px;
+    color: white;
+    border-radius: 12px;
+    min-width: 175px;
+    max-width: 400px;
+}
+
+.boton-inicio img {
+    width: 4rem;
+    height: auto;
+}
+
+
+
+
+
+
+
+
+
+  /* moviles */
+@media (max-width: 480px) {
+    nav {
+        gap: 2px;
+    }
+
+    nav a {
+        gap: 4px;
+        font-size: 1rem;
+    }
+
+    .header-plataforma h1, .header-plataforma h2 {
+        display: none;
+    }
+
+    .elementos-header-plataforma {
+        gap: 2px;
+    }
+
+
+} 
+
+/* tablets */
+@media (max-width: 768px) {
+
+}   
+
+/* laptops */
+@media (max-width: 1024px) {
+
+}  
