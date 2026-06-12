@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../Estilos/estiloComplementoDoHeal.css">
     <link rel="stylesheet" href="../Estilos/estiloPlataformaDoHeal.css">
     <script src="../Scripts/scriptPlataforma.js"></script>
+    <script src="../Scripts/scriptPlataformaVistas.js"></script>
 </head>
 
 <body>
@@ -19,10 +20,9 @@
                 </button>
                 <img src="../Recursos/Imagenes/logo-doheal-blanco-cortado.png" style="width: 4rem; height: auto;">
                 <h2>Do-Heal</h2>
-                
             </div>
             <div class="centrado">
-                <h1>Inicio</h1>
+                <h1>Solicitudes</h1>
             </div>
             <div class="derecha">
                 <h2>Usuario</h2>
@@ -56,32 +56,25 @@
         </nav>
         
         </header>
-
+        
     <section class="seccion-plataforma">
-        <div class="contenedor-plataforma ">
-            <h1>Hola, Usuario</h1>
-            <h2>Bienvenido a Do-Heal</h2>
-            <h2 class="espaciado">Acciones</h2>
-            <div class="ordenar-horizontal" style="padding: 4rem;">
-                <div class="boton-inicio">
-                    <img src="../Recursos/Iconos/lupa.svg">
-                    <h3>Buscar medicamentos</h3>
-                </div>
-                <div class="boton-inicio">
-                    <img src="../Recursos/Iconos/pildora.svg">
-                    <h3>Registrar una medicina</h3>
-                </div>
-                <div class="boton-inicio">
-                    <img src="../Recursos/Iconos/usuarios.svg">
-                    <h3>Buscar donantes</h3>
-                </div>
-                <div class="boton-inicio">
-                    <img src="../Recursos/Iconos/almacen.svg">
-                    <h3>Ver medicinas registradas</h3>
-                </div>
-
-            </div>
+        <div class="division-vistas ordenar-horizontal">
+            <button id="boton-vista-enviadas" onclick="cambiarVista('vista-enviadas','boton-vista-enviadas')">Enviadas</button>
+            <button id="boton-vista-recibidas" onclick="cambiarVista('vista-recibidas','boton-vista-recibidas')">Recibidas</button>
+            <button id="boton-vista-aceptadas" onclick="cambiarVista('vista-aceptadas','boton-vista-aceptadas')">Aceptadas</button>
         </div>
+        
+        <section class="vista" id="vista-enviadas">
+            <h1>A</h1>
+        </section>
+
+        <section class="vista" id="vista-recibidas">
+            <h1>B</h1>
+        </section>
+
+        <section class="vista" id="vista-aceptadas">
+            <h1>C</h1>
+        </section>
     </section>
 </body>
 

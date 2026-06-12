@@ -1,6 +1,6 @@
 header {
     background: #2563ee;;
-    padding: 1rem;
+    padding: 0.25rem 0.5rem;
     color: white;
     overflow-wrap: break-word;
     word-break: break-word;
@@ -14,6 +14,7 @@ nav {
     padding: 1rem;
     position: absolute;
     background:#2563ee ;
+    margin-left: 1rem;
     border-bottom-left-radius: 12px;
     border-bottom-right-radius: 12px;
 }
@@ -44,6 +45,8 @@ nav.active {
     color: white;
     border: none;
     cursor: pointer;
+    border-radius: 24px;
+    padding: 8px 12px;
 }
 
 .hamburguesa a {
@@ -58,6 +61,7 @@ nav.active {
 .elementos-header-plataforma {
     display: flex;
     flex-direction: row;
+
     gap: 8px;
 }
 
@@ -66,20 +70,32 @@ nav.active {
     flex-direction: row;
     gap: 16px;
     align-items: center;
+    flex: 1;
+    white-space: nowrap;
 }
 
 .izquierda {
     display: flex;
-    margin-right: auto;
+    justify-content: flex-start;
+
 }
 
 .derecha {
     display: flex;
-    margin-left: auto;
+    justify-content: flex-end;
 }
+
+
+.centrado {
+    display: flex;
+    justify-content: center;
+
+}
+
 
 .seccion-plataforma {
     display: flex;
+    flex-direction: column;
     margin: 8px;
     padding: 8px;
     min-height: 0;
@@ -97,9 +113,38 @@ nav.active {
     justify-content: space-around;
     flex-wrap: wrap;
     gap: 16px;
-    padding: 4rem;
 }
 
+
+.division-vistas {
+    display: flex;
+    flex: 1;
+}
+
+.division-vistas button {
+    background: #06B6D4;
+    flex: 1;
+    min-width: 75px;
+    margin: 0;
+    font-size: clamp(0.75rem, 2vw, 1.25rem);
+    text-align: center;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.division-vistas button.active{
+    text-decoration:underline;
+    flex: 2;
+}
+
+
+.vista {
+    display: none;
+}
+
+.vista.active {
+    display: flex;
+}
 
 /*Elementos pestaña inciio*/
 .boton-inicio {
@@ -142,7 +187,7 @@ nav.active {
         font-size: 1rem;
     }
 
-    .header-plataforma h1, .header-plataforma h2 {
+    .header-plataforma h2 {
         display: none;
     }
 
@@ -150,8 +195,15 @@ nav.active {
         gap: 2px;
     }
 
+    .elementos-header-plataforma div {
+    gap: 2px;
+    }
 
-} 
+    button {
+        padding: 4px 8px;
+    }
+}
+
 
 /* tablets */
 @media (max-width: 768px) {
