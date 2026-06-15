@@ -20,7 +20,7 @@ body {
     top: 0; /*pone la barra en la parte superior*/
     left: 0; /*pone la barra lo mas a la izquierda*/
     width: 100%; /*expande la barra, expande su ancho para que cubra todo el tamaño de la pantalla*/
-    height: 100px; /*Altura estandar para barras de navegacion moviles/web */
+    height: 70px; /*Altura estandar para barras de navegacion moviles/web */
     background-color: #2563ee; /*El color azul para la barra superior */
     display: flex;
     justify-content: space-between;/*es para empujar un bloque a la izquierda, uno pa el centro y otro pa la derecha*/
@@ -33,18 +33,18 @@ body {
 /*Esto para el logo con el texto de Do-Heal*/
 .Logo-con-Nombre {
     background-color: #ffffff;
-    height: 80px; /* Un poco mas pequeño para que alcance en la barra superior*/
-    width: 250px;
+    height: 50px; /* Un poco mas pequeño para que alcance en la barra superior*/
+    width: 200px;
     padding: 0 12px;
-    border-radius: 20px; /*esto sirve para redondear los bordes del cuadro blanco*/
+    border-radius: 10px; /*esto sirve para redondear los bordes del cuadro blanco*/
     display: flex;
     align-items: center;
-    gap: 30px; /*esto para poner espacio entre el logo y la palabra do-heal*/
+    gap: 20px; /*esto para poner espacio entre el logo y la palabra do-heal*/
 }
 
 /*Esto es para la imagen de la superior izquierda de la pag*/
 .logo-imagen {
-    height: 70px;/*ajusta la altura de la imagen para que no choque con lo bordes de la barra*/
+    height: 50px;/*ajusta la altura de la imagen para que no choque con lo bordes de la barra*/
     width: auto; /*mantiene la proporcion original de la imagen pa que no se veo to estirao*/
     border-radius: 4px; /*Esto es opcional pa darle un pequeño redondeado sutil a las esquinas del logo*/
     object-fit: contain;
@@ -53,7 +53,7 @@ body {
 /*tamaño de letra para el doheal*/
 .Nombre-de-Startup {
     color: rgb(63, 62, 62);
-    font-size: 30px;
+    font-size: 25px;
     font-weight: 700;/*letra en negrita para resaltar*/
 }
 
@@ -66,7 +66,7 @@ body {
 .enlace-menu {
     color: #ffffff;
     text-decoration: none; /*para quitar la linea subrayada que sale cuando es un link*/
-    font-size: 25px;
+    font-size: 20px;
     transition: opacity 0.2s;
 }
 
@@ -82,16 +82,16 @@ body {
 .btn-nav {
     border: none;
     padding: 8px 16px;
-    font-size: 25px;    
-    border-radius: 20px;
+    font-size: 20px;    
+    border-radius: 10px;
     cursor: pointer;
     color: #ffffff;
     transition: background-color 0.2s, transform 0.1s;
 }
 
 .btn-primario {
-    font-weight: bold;
-    height: 80px;
+    
+    height: 50px;
     background-color: #06b6d4;
 }
 
@@ -100,8 +100,8 @@ body {
 }
 
 .btn-secundario {
-    font-weight: bold;
-    height: 80px;
+    
+    height: 50px;
     background-color: #60a5fa;
 }
 
@@ -160,7 +160,7 @@ body {
 }
 
 .Subtitulo {
-    font-size: 50px;
+    font-size: 35px;
     font-weight: 700;
     color: #1e293b;
 }
@@ -511,6 +511,131 @@ body {
     opacity: 0.8;
     text-decoration: underline; /*subraya el enlace al pasar el mouse para indicar que es interactivo*/
 }
+
+.Form-Fondo {
+    display: none; /*oculta el formulario por defecto, se mostrara al hacer click en el boton de registrarse o iniciar sesion*/
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /*esto hace el fondo semitransparente pa enfocar mas la atencion en el formulario*/
+    backdrop-filter: blur(4px); /*esto agrega un efecto de desenfoque al fondo pa que el formulario resalte mas*/
+    z-index: 2000; /*esto asegura que el formulario se muestre por encima de la barra fija y cualquier otro contenido de la pagina*/
+    justify-content: center;
+    align-items: center;
+}
+
+/*Esto es la caja blanca central del formulario*/
+.Form-Contenido{
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 480px;
+    padding: 40px;
+    border-radius: 24px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    position:relative;
+    font-family: 'Inter', sans-serif;
+}
+
+/*Esto es pa el boton x pa cerrar el formulario*/
+
+.Btn-Cerrar-Formulario{
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    background-color: none;
+    border: none;
+    font-size: 32px;
+    cursor: pointer;
+    color: #94a3b8;
+    background: none;
+    outline: none;
+}
+
+.Btn-Cerrar-Formulario:hover {
+    color: #334155;
+}
+
+.Titulo-Formulario{
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 25px;
+}
+
+.Modelo-Formulario{
+    display:none; /*oculta el contenido del formulario por defecto, se mostrara al hacer click en la pestaña correspondiente*/
+    flex-direction: column;
+    gap: 20px;
+}
+
+.Modelo-Formulario.Activo {
+    display:flex;/*Muestra solo el formulario activo*/
+}
+
+.Campo-Grupo {
+    display:flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.Campo-Grupo label {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.Campo-Grupo input {
+    padding: 12px 16px;
+    font-size: 16px;
+    border: 2px solid #cbd5e1;
+    border-radius: 12px;
+    outline: none;        
+    transition: border-color 0.2s;
+}
+
+.Campo-Grupo input:focus {
+    border-color: #2563ee;
+}
+
+.Btn-Form-Accion{
+    Border: none;
+    padding: 14px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffffff;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.2s;
+}
+
+.Btn-Azul {
+    background-color: #2563ee;
+}
+
+.Btn-Azul:hover {
+    background-color: #1d4ed8;
+}
+
+.Btn-Celeste {
+    background-color: #06b6d4;
+}
+
+.Btn-Celeste:hover {
+    background-color: #0891b2;
+}
+
+.Mensaje-Error-DNI {
+    display: none;
+    font-size: 14px;
+    font-weight: 600;
+    color: #ef4444;
+    margin-top: 4px;
+}
+
 
 
 

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <!--Es para que el ancho de la pantalla se adapte al tamaño del diapositivo(celular,tablet o pc)-->
-    <meta name="Pagina principal" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Do-Heal</title>
     <!--Es para vincular los estilos(el archivo css) con el archivo vista(el esqueleto html)-->
     <link rel="stylesheet" href="../Estilos/estiloBasicoDoHeal.css">
@@ -17,13 +17,13 @@
 
         <nav class="botones-centrales">
             <a href="#SobreNosotros" class="enlace-menu">Sobre Nosotros</a>
-            <a href="#ComoFunciona" class="enlace-menu">Como funciona</a>
+            <a href="#ComoFunciona" class="enlace-menu">Cómo funciona</a>
             <a href="#Contacto" class="enlace-menu">Contacto</a>
         </nav>
 
         <div class="botones-derechos">
-            <button class="btn-nav btn-primario">Registrar</button>
-            <button class="btn-nav btn-secundario">Acceder</button>            
+            <button class="btn-nav btn-primario">Registrarse</button>
+            <button class="btn-nav btn-secundario">Iniciar Sesión</button>            
         </div>
             
     </header>
@@ -37,13 +37,12 @@
 
                 <p class="Descripcion">
                     En Do-Heal, conectamos pacientes que tienen dificultades para acceder a los
-                    medicamentos para acceder a los medicamentos que necesitan, con donantes 
-                    dispuestos a ayudarlos
+                    medicamentos que necesitan, con donantes dispuestos a ayudarlos
                 </p>
 
                 <div class="Seccion-de-abajo-izquierda">
                     <h2 class="Subtitulo">Participa ahora</h2>
-                    <button class="btn-unete">Unete a Do-Heal</button>
+                    <button class="btn-unete">Únete a Do-Heal</button>
                 </div>
             </div>
 
@@ -179,6 +178,63 @@
             </div>
 
         </section>
+
+        <div id="Modelo-IniciarSesion" class="Form-Fondo">
+            <div class="Form-Contenido">
+                <button id="Btn-CerrarIS" class="Btn-Cerrar-Formulario">&times;</button>
+
+                <h2 class="Titulo-Formulario">Iniciar Sesión</h2>
+
+                <form id="FormIniciarSesion" class="Modelo-Formulario Activo">
+                    <div class="Campo-Grupo">
+                        <label for="LoginCorreo">Correo Electrónico</label>
+                        <input type="email" id="LoginCorreo" name="ejemplo@dominio.com" required>
+                    </div>
+                    <div class="Campo-Grupo">
+                        <label for="LoginPassword">Contraseña</label>
+                        <input type="password" id="LoginPassword" name="**********" required>
+                    </div>
+                    <button type="submit" class="Btn-Form-Accion Btn-Azul">Ingrsar al Sistema</button>
+                </form>
+            </div>
+        </div>
+
+
+        <div id="Modelo-Registrarse" class="Form-Fondo">
+            <div class = "Form-Contenido">
+                <button id ="Btn-CerrarRe" class="Btn-Cerrar-Formulario">&times;</button>
+
+                <h2 class="Titulo-Formulario">Registrar Cuenta</h2>
+
+                <form id="FormRegistrarse" class="Modelo-Formulario Activo">
+                    <div class="Campo-Grupo">
+                        <label for="RegistrarNombre">Nombres Completos</label>
+                        <input type="text" id="RegistrarNombre" placeholder="Juan Perez" required>
+                    </div>
+                    <div class="Campo-Grupo">
+                        <label for="RegistrarDNI">DNI (Documento de Identidad)</label>
+                        <input type="text" 
+                               id="RegistrarDNI" 
+                               placeholder="12345678"
+                               inputmode="numeric" 
+                               maxlength="8"
+                               required>
+                        <span id="ErrorDni" class="Mensaje-Error-DNI">El DNI debe contener exactamente 8 numeros</span>
+                    </div>
+                    <div class="Campo-Grupo">
+                        <label for="RegistrarCorreo">Correo Electrónico</label>
+                        <input type="email" id="RegistrarCorreo" placeholder="ejemplo@dominio.com" required>
+                    </div>
+                    <div class="Campo-Grupo">
+                        <label for="RegistrarPassword">Contraseña</label>
+                        <input type="password" id="RegistrarPassword" placeholder="Crea una contraseña" required>
+                    </div>
+                    <button type="submit" class="Btn-Form-Accion Btn-Celeste">Registrar Cuenta</button>
+                </form>
+            </div>
+        </div>
+
+
 
     </main>     
 
