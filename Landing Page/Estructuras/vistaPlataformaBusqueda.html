@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../Estilos/estiloPlataformaDoHeal.css">
     <script src="../Scripts/scriptPlataforma.js"></script>
     <script src="../Scripts/scriptPlataformaVistas.js"></script>
+    <script src="../Scripts/scriptListadoElementos.js"></script>
 </head>
 
 <body>
@@ -62,16 +63,63 @@
             <button id="boton-vista-medicina" onclick="cambiarVista('vista-medicina','boton-vista-medicina')">Medicinas</button>
             <button id="boton-vista-pacientes" onclick="cambiarVista('vista-pacientes','boton-vista-pacientes')">Pacientes</button>
         </div>
-        
-        <section class="vista" id="vista-medicina">
-            <h1>A</h1>
+        <!--------------------------------------------------->
+        <section class="vista seccion-interna" id="vista-medicina">
+            <hr>
+            <div class="contenedor-plataforma cuadricula" id="contenedor-busqueda-medicinas">
+                <template id="plantilla-busqueda-medicinas">
+                <div class="elemento-cuadricula">
+                    <img data-i="imagen" class="elemento-img" src="../Recursos/Imagenes/logo-doheal.png">
+                    <h3 data-i="nombreMedicamento" class="elemento-titulo"></h3>
+                        <div class="elemento-texto">
+                            <p data-i="publicador"></p>
+                            <p data-i="ubicacion"></p>
+                            <p data-i="caduca"></p>
+                        </div>
+                        <div class="elemento-accion">
+                            <button>Solicitar</button>
+                        </div>
+                    
+                </div>
+                </template>
+                <script>mostrarLista(busquedaMedicinas, 'plantilla-busqueda-medicinas', 'contenedor-busqueda-medicinas')</script>
+            </div>
         </section>
-
-        <section class="vista" id="vista-pacientes">
-            <h1>B</h1>
+        <!--------------------------------------------------->
+        <section class="vista seccion-interna" id="vista-pacientes">
+            <hr>
+            <div class="contenedor-plataforma listado" id="contenedor-busqueda-pacientes">
+                <template id="plantilla-busqueda-pacientes">
+                <div class="elemento-listado">
+                    <img data-i="imagen" class="elemento-img" src="../Recursos/Imagenes/logo-doheal.png">
+                    <div class="elemento-texto">
+                    <h3 data-i="nombre" class="elemento-titulo"></h3>
+                    <p data-i="ubicacion"></p>
+                    <p data-i="solicita"></p>
+                    <p data-i="diagnostico"></p>
+                    </div>
+                    <div class="elemento-accion">
+                        <button>Contactar</button>
+                    </div>
+                </div>
+                </template>
+                <script>mostrarLista(busquedaPacientes, 'plantilla-busqueda-pacientes', 'contenedor-busqueda-pacientes')</script>
+            </div>
         </section>
 
     </section>
+
+
+    <script>
+        const parametrosLink = new URLSearchParams(window.location.search);
+        const vista = parametrosLink.get("vista")
+        if (vista == "pacientes"){
+            cambiarVista('vista-pacientes','boton-vista-pacientes')
+        }
+        else{
+            cambiarVista('vista-medicina','boton-vista-medicina')
+        }
+    </script>
 </body>
 
 </html>

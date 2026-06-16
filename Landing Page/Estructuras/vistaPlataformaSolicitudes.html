@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../Estilos/estiloPlataformaDoHeal.css">
     <script src="../Scripts/scriptPlataforma.js"></script>
     <script src="../Scripts/scriptPlataformaVistas.js"></script>
+    <script src="../Scripts/scriptListadoElementos.js"></script>
 </head>
 
 <body>
@@ -63,19 +64,63 @@
             <button id="boton-vista-recibidas" onclick="cambiarVista('vista-recibidas','boton-vista-recibidas')">Recibidas</button>
             <button id="boton-vista-aceptadas" onclick="cambiarVista('vista-aceptadas','boton-vista-aceptadas')">Aceptadas</button>
         </div>
-        
-        <section class="vista" id="vista-enviadas">
-            <h1>A</h1>
+        <!--------------------------------------------------->
+        <section class="vista seccion-interna" id="vista-enviadas">
+            <hr>
+            <div class="contenedor-plataforma listado" id="contenedor-solicitudes-enviadas">
+                <template id="plantilla-solicitudes-enviadas">
+                <div class="elemento-listado">
+                    <img data-i="imagen" class="elemento-img" src="../Recursos/Imagenes/logo-doheal.png">
+                    <div class="elemento-texto">
+                    <h3 data-i="medicamento" class="elemento-titulo"></h3>
+                    <p data-i="caduca"></p>
+                    <p data-i="publicador"></p>
+                    <p data-i="ubicacion"></p>
+                    </div>
+                    <div class="elemento-accion">
+                        <button>Contactar</button>
+                    </div>
+                </div>
+                </template>
+                <script>mostrarLista(solicitudesEnviadas, 'plantilla-solicitudes-enviadas', 'contenedor-solicitudes-enviadas')</script>
+            </div>
         </section>
 
-        <section class="vista" id="vista-recibidas">
-            <h1>B</h1>
+        <!--------------------------------------------------->
+        <section class="vista seccion-interna" id="vista-recibidas">
+            <hr>
+            <div class="contenedor-plataforma listado" id="contenedor-solicitudes-recibidas">
+                <template id="plantilla-solicitudes-recibidas">
+                <div class="elemento-listado">
+                    <img data-i="imagen" class="elemento-img" src="../Recursos/Imagenes/logo-doheal.png">
+                    <div class="elemento-texto">
+                    <h3 data-i="nombre" class="elemento-titulo"></h3>
+                    <p data-i="medicamentoSolicitado"></p>
+                    <p data-i="ubicacion"></p>
+                    <p data-i="recibido"></p>
+                    <p data-i="estadoReceta"></p>
+                    </div>
+                    <div class="elemento-accion">
+                        <button>Contactar</button>
+                    </div>
+                </div>
+                </template>
+                <script>mostrarLista(solicitudesRecibidas, 'plantilla-solicitudes-recibidas', 'contenedor-solicitudes-recibidas')</script>
+            </div>
         </section>
 
-        <section class="vista" id="vista-aceptadas">
+        <!--------------------------------------------------->
+        <section class="vista seccion-interna" id="vista-aceptadas">
+            <hr>
             <h1>C</h1>
         </section>
     </section>
+
+    <script>
+        //const parametrosLink = new URLSearchParams(window.location.search);
+        //hacer algo con esos parametros si es necesario
+        cambiarVista('vista-enviadas','boton-vista-enviadas')
+    </script>
 </body>
 
 </html>

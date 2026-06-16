@@ -57,24 +57,40 @@
         </nav>
         </header>
         
+        
     <section class="seccion-plataforma">
         <div class="division-vistas ordenar-horizontal">
             <button id="boton-vista-dosis" onclick="cambiarVista('vista-dosis','boton-vista-dosis')">Dosis</button>
             <button id="boton-vista-medicina" onclick="cambiarVista('vista-medicina','boton-vista-medicina')">Medicinas</button>
             <button id="boton-vista-recetas" onclick="cambiarVista('vista-recetas','boton-vista-recetas')">Recetas</button>
         </div>
-        
+        <!--------------------------------------------------->
         <section class="vista seccion-interna" id="vista-dosis">
             <hr>
             <div class="contenedor-horizontal">
                 <h1 class="espaciado">Recordatorios de dosis</h1>
                 <button>Registrar tratamiento</button>
             </div>
-
-            
-            
+            <div class="contenedor-plataforma listado" id="contenedor-dosis">
+                <template id="plantilla-dosis">
+                <div class="elemento-listado">
+                    <img data-i="imagen" class="elemento-img" src="../Recursos/Imagenes/logo-doheal.png">
+                    <div class="elemento-texto">
+                    <p data-i="medicamento">Nombre: Paracetamol</p>
+                    <p data-i="dosis">Presentacion: Jarabe</p>
+                    <p data-i="proximaToma">Estado: Disponible</p>
+                    <p data-i="intervalo">Caduca: 11/2026</p>
+                    <p data-i="estado">Caduca: 11/2026</p>
+                    </div>
+                    <div class="elemento-accion">
+                        <p>OK</p>
+                        <button>Editar</button>
+                    </div>
+                </div>
+                </template>
+                <script>mostrarLista(dosisRegistradas, 'plantilla-dosis', 'contenedor-dosis')</script>
         </section>
-
+        <!--------------------------------------------------->
         <section class="vista seccion-interna" id="vista-medicina">
             <hr>
             <div class="contenedor-horizontal">
@@ -87,7 +103,7 @@
                 <div class="elemento-listado">
                     <img data-i="imagen" class="elemento-img" src="../Recursos/Imagenes/logo-doheal.png">
                     <div class="elemento-texto">
-                    <h3 data-i="nombre">Nombre: Paracetamol</h3>
+                    <h3 data-i="nombre" class="elemento-titulo">Nombre: Paracetamol</h3>
                     <p data-i="presentacion">Presentacion: Jarabe</p>
                     <p data-i="estado">Estado: Disponible</p>
                     <p data-i="caduca">Caduca: 11/2026</p>
@@ -102,7 +118,7 @@
             </div>
             
         </section>
-
+        <!--------------------------------------------------->
         <section class="vista seccion-interna" id="vista-recetas">
             <hr>
             <div class="contenedor-horizontal">
@@ -110,8 +126,40 @@
                 <button>Registrar receta medica</button>
             </div>
             
+            <div class="contenedor-plataforma cuadricula" id="contenedor-recetas">
+                <template id="plantilla-recetas">
+                <div class="elemento-cuadricula">
+                    <img data-i="imagen" class="elemento-img" src="../Recursos/Imagenes/logo-doheal.png">
+                    <div class="elemento-texto">
+                    <p data-i="medicamento">Nombre: Paracetamol</p>
+                    <p data-i="dosis">Presentacion: Jarabe</p>
+                    <p data-i="frecuencia">Estado: Disponible</p>
+                    <p data-i="duracion">Caduca: 11/2026</p>
+                    <p data-i="diagnostico">Caduca: 11/2026</p>
+                    <p data-i="estado">Caduca: 11/2026</p>
+                    </div>
+                    <div class="elemento-accion">
+                        <p>OK</p>
+                        <button>Editar</button>
+                    </div>
+                </div>
+                </template>
+                <script>mostrarLista(recetasRegistradas, 'plantilla-recetas', 'contenedor-recetas')</script>
+            </div>
+
         </section>
     </section>
+
+    <script>
+        const parametrosLink = new URLSearchParams(window.location.search);
+        const vista = parametrosLink.get("vista")
+        if (vista == "medicinas"){
+            cambiarVista('vista-medicina','boton-vista-medicina')
+        }
+        else{
+            cambiarVista('vista-dosis','boton-vista-dosis')
+        }
+    </script>
 </body>
 
 </html>
