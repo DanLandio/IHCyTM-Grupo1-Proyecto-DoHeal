@@ -102,6 +102,15 @@ nav.active {
     flex: 1;
 }
 
+.seccion-interna {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    flex: 1;
+    
+}
+
 .contenedor-plataforma {
     flex: 1;
     text-align: center;
@@ -146,6 +155,25 @@ nav.active {
     display: flex;
 }
 
+
+.contenedor-horizontal {
+    padding: 4px;
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+}
+
+.contenedor-vertical {
+    padding: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.contenedor-horizontal button, .contenedor-vertical button {
+    padding: 4px 16px;
+}
+
 /*Elementos pestaña inciio*/
 .boton-inicio {
     background: #2563ee;
@@ -171,7 +199,75 @@ nav.active {
 
 
 
+/*Elementos pestaña salud */
 
+
+
+
+.listado {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    align-items: start;
+}
+
+.elemento-listado {
+    display: grid;
+    grid-template-columns: 120px 2fr;
+    grid-template-rows: auto, auto;
+    gap: 1rem;
+    align-items: center;
+    max-width: 600px;
+    max-height: 300px;
+    grid-template-areas:
+    "img texto"
+    "img accion";
+
+    background: white;
+    border: 1px solid #A1A1A1;
+    border-radius: 12px;
+    padding: 8px;
+}
+
+.elemento-img {
+    height: auto;
+    width: 120px;
+    object-fit: cover;
+    grid-area: img;
+}
+
+.elemento-texto {
+    grid-area: texto;
+    display: flex;
+    flex: 1;
+    flex-direction:column;
+    justify-content: center;
+    text-align: left;
+    gap: 8px;
+    height: 100%;
+    min-width: 0;
+}
+
+.elemento-texto p{
+    font-size: clamp(0.75rem, 2vw, 1rem);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.elemento-accion {
+    grid-area: accion;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.elemento-accion button{
+    font-size: clamp(0.9rem, 4vw, 1.2rem);;
+    padding: 4px 8px;
+}
 
 
 
@@ -200,8 +296,19 @@ nav.active {
     }
 
     button {
-        padding: 4px 8px;
+        padding: 2px 4px;
+        font-size: 0.6rem;
     }
+
+    .espaciado {
+        margin: 16px 0px
+    }
+
+    h1 {
+        font-size: 1rem;
+    }
+
+
 }
 
 

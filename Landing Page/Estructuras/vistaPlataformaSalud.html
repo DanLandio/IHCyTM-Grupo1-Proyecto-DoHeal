@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../Estilos/estiloPlataformaDoHeal.css">
     <script src="../Scripts/scriptPlataforma.js"></script>
     <script src="../Scripts/scriptPlataformaVistas.js"></script>
+    <script src="../Scripts/scriptListadoElementos.js"></script>
 </head>
 
 <body>
@@ -63,16 +64,52 @@
             <button id="boton-vista-recetas" onclick="cambiarVista('vista-recetas','boton-vista-recetas')">Recetas</button>
         </div>
         
-        <section class="vista" id="vista-dosis">
-            <h1>A</h1>
+        <section class="vista seccion-interna" id="vista-dosis">
+            <hr>
+            <div class="contenedor-horizontal">
+                <h1 class="espaciado">Recordatorios de dosis</h1>
+                <button>Registrar tratamiento</button>
+            </div>
+
+            
+            
         </section>
 
-        <section class="vista" id="vista-medicina">
-            <h1>B</h1>
+        <section class="vista seccion-interna" id="vista-medicina">
+            <hr>
+            <div class="contenedor-horizontal">
+            <h1 class="espaciado">Medicinas registradas</h1>
+            <button>Registrar medicina</button>
+            </div>
+
+            <div class="contenedor-plataforma listado" id="contenedor-medicinas">
+                <template id="plantilla-medicinas">
+                <div class="elemento-listado">
+                    <img data-i="imagen" class="elemento-img" src="../Recursos/Imagenes/logo-doheal.png">
+                    <div class="elemento-texto">
+                    <h3 data-i="nombre">Nombre: Paracetamol</h3>
+                    <p data-i="presentacion">Presentacion: Jarabe</p>
+                    <p data-i="estado">Estado: Disponible</p>
+                    <p data-i="caduca">Caduca: 11/2026</p>
+                    </div>
+                    <div class="elemento-accion">
+                        <p>OK</p>
+                        <button>Editar</button>
+                    </div>
+                </div>
+                </template>
+                <script>mostrarLista(medicinasRegistradas, 'plantilla-medicinas', 'contenedor-medicinas')</script>
+            </div>
+            
         </section>
 
-        <section class="vista" id="vista-recetas">
-            <h1>C</h1>
+        <section class="vista seccion-interna" id="vista-recetas">
+            <hr>
+            <div class="contenedor-horizontal">
+                <h1 class="espaciado">Recetas medicas registradas</h1>
+                <button>Registrar receta medica</button>
+            </div>
+            
         </section>
     </section>
 </body>

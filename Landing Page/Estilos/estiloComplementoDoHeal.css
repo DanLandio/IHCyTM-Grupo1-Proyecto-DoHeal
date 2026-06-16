@@ -11,7 +11,7 @@ html {
 
 body {
     color: #334155;
-    font-size: clamp(0.5rem, 2vw, 1.25rem);
+    font-size: clamp(0.75rem, 2vw, 1.25rem);
 }
 
 
@@ -20,7 +20,7 @@ h1 {
 }
 
 h2 {
-    font-size: clamp(0.75rem, 4vw, 1.5rem);
+    font-size: clamp(0.9rem, 4vw, 1.5rem);
 }
 
 .login-seccion {
@@ -51,7 +51,7 @@ button {
     background: #2563ee;
     color: #ffffff;
     font-family: 'Inter', sans-serif;
-    font-size: 16px;
+    font-size: clamp(0.75rem, 4vw, 1rem);
     cursor:pointer;
 }
 
@@ -61,6 +61,6 @@ button {
 }
 
 .espaciado {
-    margin-top: 32px;
+    margin: 32px 0px;
     line-height: 1.5px;
 }
