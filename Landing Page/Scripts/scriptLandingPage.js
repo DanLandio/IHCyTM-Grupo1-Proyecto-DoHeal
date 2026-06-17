@@ -10,6 +10,9 @@ document.addEventListener("DOMContentLoaded", ()=>{
     const btnRegistrarseNav = document.querySelector(".btn-primario");
     const btnIniciarSesionNav = document.querySelector(".btn-secundario");
 
+    const btnUneteDoHeal = document.getElementById("Btn-Unete-Do-Heal")
+    const btnEmpezarAhora = document.getElementById("Btn-Empezar-Ahora");
+
     const formRegistrarse = document.getElementById("FormRegistrarse");
     const inputDNI = document.getElementById("RegistrarDNI");
     const errorDNI = document.getElementById("ErrorDni");
@@ -19,6 +22,9 @@ document.addEventListener("DOMContentLoaded", ()=>{
         modalIS.style.display = "flex";
     });
 
+    btnEmpezarAhora.addEventListener("click", ()=>{
+        modalIS.style.display = "flex"
+    })
     
     btnCerrarIS.addEventListener("click", ()=>{
         modalIS.style.display = "none";
@@ -27,6 +33,10 @@ document.addEventListener("DOMContentLoaded", ()=>{
     btnRegistrarseNav.addEventListener("click", ()=>{
         modalRe.style.display = "flex";
     });
+
+    btnUneteDoHeal.addEventListener("click", ()=>{
+        modalRe.style.display = "flex";
+    })
 
     btnCerrarRe.addEventListener("click", ()=>{
         modalRe.style.display = "none";

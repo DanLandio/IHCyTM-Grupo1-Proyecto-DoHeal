@@ -9,20 +9,28 @@
     <link rel="stylesheet" href="../Estilos/estiloBasicoDoHeal.css">
 </head>
 <body>
-    <header class="Barra-superior">
-        <div class="Logo-con-Nombre">
-            <img src="../Recursos/Imagenes/logo-doheal-cortado.png" alt="Logo Do-Heal" class="logo-imagen"> 
-            <span class="Nombre-de-Startup">Do-Heal</span>
+    <header class="Barra-superior"> <!--Este es el contenedor principal de la cabecera donde va to lo que va en la barra de arriba azul-->
+        <div class="Logo-con-Nombre"><!--Esto agrupa la imagen del logo con el texto de doheal-->
+            <img src="../Recursos/Imagenes/logo-doheal-cortado.png" alt="Logo Do-Heal" class="logo-imagen"> <!--esto sirve pa poner una imagen
+                                                                                                                src es la ruta donde ta la
+                                                                                                                imagen
+                                                                                                                alt es el texto alternativo
+                                                                                                                por si la imagen no carga-->
+            <span class="Nombre-de-Startup">Do-Heal</span><!--es un contenedor de línea para textos pequeños-->
         </div>
 
-        <nav class="botones-centrales">
-            <a href="#SobreNosotros" class="enlace-menu">Sobre Nosotros</a>
+        <nav class="botones-centrales"><!--Este es el bloque de navegacion que tiene todas las secciones-->
+            <a href="#SobreNosotros" class="enlace-menu">Sobre Nosotros</a><!--el a href es un hipervínculo o enlace, sirpe pa redirigir
+                                                                                al usuario a otra seccion de la pag web o a una web
+                                                                                externa al hacerle clic-->
             <a href="#ComoFunciona" class="enlace-menu">Cómo funciona</a>
+            <a href="#Funcionalidades" class="enlace-menu">Funcionalidades</a>
             <a href="#Contacto" class="enlace-menu">Contacto</a>
         </nav>
 
-        <div class="botones-derechos">
-            <button class="btn-nav btn-primario">Registrarse</button>
+        <div class="botones-derechos"><!--Este es el contenedor de la parte derecha de la barra azul pa los botones-->
+            <button class="btn-nav btn-primario">Registrarse</button><!--es un boton interactivo sirve pa que el usuario realice una
+                                                                        accion inmediata como abrir un formulario o abrir una ventana-->
             <button class="btn-nav btn-secundario">Iniciar Sesión</button>            
         </div>
             
@@ -30,19 +38,24 @@
 
     <main class="Contenido-principal">
 
-        <section class="Seccion-de-Bienvenida">
+        <section class="Seccion-de-Bienvenida"><!--en esta seccion dividimos la pantalla en dos pa que acomodar bien to-->
 
             <div class="Seccion-de-la-izquierda">
-                <h1 class="Titulo-de-la-seccion">Simplifica la donación y la gestión de medicamentos</h1>
+                <h1 class="Titulo-de-la-seccion">Simplifica la donación y la gestión de medicamentos</h1><!--el h1 es el titulo principal
+                                                                                                            y de mayor jerarquia de la
+                                                                                                            pagina
+                                                                                                            Solo debe haber uno por archivo-->
 
-                <p class="Descripcion">
+                <p class="Descripcion"><!--el p es una etiqueta de parrafo, sirve pa colocar bloques de texto descriptivos o
+                                            informacion estandar-->
                     En Do-Heal, conectamos pacientes que tienen dificultades para acceder a los
                     medicamentos que necesitan, con donantes dispuestos a ayudarlos
                 </p>
 
                 <div class="Seccion-de-abajo-izquierda">
-                    <h2 class="Subtitulo">Participa ahora</h2>
-                    <button class="btn-unete">Únete a Do-Heal</button>
+                    <h2 class="Subtitulo">Participa ahora</h2><!--es un subtitulo de segundo nivel, sirve pa nombrar los titulos
+                                                                    de cada seccion-->
+                    <button id="Btn-Unete-Do-Heal" class="btn-unete">Únete a Do-Heal</button>
                 </div>
             </div>
 
@@ -52,11 +65,15 @@
 
         </section>
 
-        <section id="SobreNosotros" class="Seccion-Sobre-Nosotros">
+        <section id="SobreNosotros" class="Seccion-Sobre-Nosotros"><!--el id es un identificador unico que puede servir pa llamarlo 
+                                                                    a otros lugares como arriba en la parte de #SobreNosotros en 
+                                                                    este caso seria (#"id")para llamarlo esto hace que cuando de
+                                                                    click en sobrenosotros automaticamente me mande pa la seccion
+                                                                    sobrenosotros porque lo llamo con el id arriba-->
 
             <h2 class="Titulo-Sobre-Nosotros">Sobre Nosotros</h2>
 
-            <div class="Fila-SobreNosotros">
+            <div class="Bloque-SobreNosotros">
                 <div class="Imagenes-SobreNosotros">
                     <img src="../Recursos/Imagenes/Falta-de-Medicamento.jpeg" alt="Identificación del problema" class="SobreNosotros-Imagen">
                 </div>
@@ -138,10 +155,89 @@
             </div>
 
             <div class="Boton-ComoFunciona">
-                <button class="btn-unete">¡Empezar ahora!</button>
+                <button id="Btn-Empezar-Ahora" class="btn-unete">¡Empezar ahora!</button>
             </div>
 
         </section>
+
+        <section id="Funcionalidades" class="Seccion-Funcionalidades">
+            <h2 class="Titulo-Funcionalidades">Funcionalidades de la Aplicación</h2>
+
+            <div class="Bloque-Funcionalidades">
+                <div class="Imagenes-Funcionalidades">
+                    <img src="../Recursos/Imagenes/Busqueda-DoHeal.png" alt="Sistema de Busqueda" class="Funcionalidades-Imagen">
+                </div>
+                <div class="Bloque-Texto-Funcionalidades">
+                    <h3 class="Subtitulo-Funcionalidades">Búsqueda de medicamento por nombre</h3>
+                    <p class="Texto-Funcionalidades">
+                        Encuentre rápidamente los medicamentos recetados que necesitas utilizando nuestro
+                        motor de búsqueda por nombre comercial o compuesto genérico.
+                    </p>
+                    <p class="Texto-Funcionalidades">
+                        El sistema aplica filtros avanzados por distrito dentro de Lima Metropolitana para
+                        priorizar de forma automática a los donantes mas cercanos a su ubicación actual.
+                    </p>
+                </div>
+            </div>
+
+            <div class="Bloque-Funcionalidades-Invertido">
+                <div class="Imagenes-Funcionalidades">
+                    <img src="../Recursos/Imagenes/Validacion-DoHeal.png" alt="Modulo de Escaneo" class="Funcionalidades-Imagen">
+                </div>
+                <div class="Bloque-Texto-Funcionalidades">
+                    <h3 class="Subtitulo-Funcionalidades">Registro automático de detalles del medicamento</h3>
+                    <p class="Texto-Funcionalidades">
+                        Registrar una medicina o receta es sumamente sencillo. Al tomar una foto del 
+                        empaque, detectamos automáticamente los detalle del fármaco.
+                    </p>
+                    <p class="Texto-Funcionalidades">
+                        El sistema extrae el lote y comprueba fecha de caducidad sea óptima, garantizando
+                        que todo el stock disponible en la red sea completamente seguro y consumible.
+                    </p>
+                </div>
+            </div>
+
+            <div class="Bloque-Funcionalidades">
+                <div class="Imagenes-Funcionalidades">
+                    <img src="../Recursos/Imagenes/Solicitudes-DoHeal.png" alt="Solicitudes para donantes" class="Funcionalidades-Imagen">
+                </div>
+                <div class="Bloque-Texto-Funcionalidades">
+                    <h3 class="Subtitulo-Funcionalidades">Visualización de solicitudes para donantes</h3>
+                    <p class="Texto-Funcionalidades">
+                        Si cuentas con medicamentos excedentes en tu botiquín doméstico, la plataforma
+                        te permite visualizar un feed en tiempo real con las necesidades activas de
+                        pacientes en Lima Metropolitana
+                    </p>
+                    <p class="Texto-Funcionalidades">
+                        Para garantizar tu tranquilidad y evitar la reventa informal, cada solicitud
+                        está vinculada obligatoriamente a una receta médica verificada por profesionales
+                        de la salud. Podrás evaluar la urgencia del caso y la cercanía del paciente antes
+                        de aceptar el emparejamiento y coordinar la ayuda de forma transparente
+                    </p>
+                </div>
+            </div>
+
+            <div class="Bloque-Funcionalidades-Invertido">
+                <div class="Imagenes-Funcionalidades">
+                    <img src="../Recursos/Imagenes/Mensajeria-DoHeal.png" alt="Coordinación y Mensajería" class="Funcionalidades-Imagen">
+                </div>
+                <div class="Bloque-Texto-Funcionalidades">
+                    <h3 class="Subtitulo-Funcionalidades">Mensajería simple entre usuarios</h3>
+                    <p class="Texto-Funcionalidades">
+                        Una vez que el sistema detecte una coincidencia exacta entre un donante y una
+                        receta, se habilita una central de mensajería interna privada para interactuar.
+                    </p>
+                    <p class="Texto-Funcionalidades">
+                        Ambos usuarios podrán comunicarse de forma directa dentro de la app para pactar
+                        la entrega de las donaciones en locaciones comunitarias confiables, como centros
+                        de salud o postas locales.
+                    </p>
+                </div>
+            </div>
+
+        </section>
+        
+
 
         <section id="Contacto" class="Seccion-Contacto">
             <h2 class="Titulo-Contacto">Contacto</h2>
@@ -194,7 +290,7 @@
                         <label for="LoginPassword">Contraseña</label>
                         <input type="password" id="LoginPassword" name="**********" required>
                     </div>
-                    <button type="submit" class="Btn-Form-Accion Btn-Azul">Ingrsar al Sistema</button>
+                    <button type="submit" class="Btn-Form-Accion Btn-Azul">Ingresar al Sistema</button>
                 </form>
             </div>
         </div>
@@ -202,7 +298,10 @@
 
         <div id="Modelo-Registrarse" class="Form-Fondo">
             <div class = "Form-Contenido">
-                <button id ="Btn-CerrarRe" class="Btn-Cerrar-Formulario">&times;</button>
+                <button id ="Btn-CerrarRe" class="Btn-Cerrar-Formulario">&times;</button><!--el &times es un codigo especial en
+                                                                                            html que renderiza físicamente el
+                                                                                            simbolo de una X geometrica
+                                                                                            ideal pa botones de cerrar-->
 
                 <h2 class="Titulo-Formulario">Registrar Cuenta</h2>
 
@@ -218,11 +317,15 @@
                                placeholder="12345678"
                                inputmode="numeric" 
                                maxlength="8"
-                               required>
+                               required><!--el input type es el campo de entrada de datos, sirve pa que el usuario escriba su
+                                            informacion como su nombre o contraseña dentro del formulario-->
                         <span id="ErrorDni" class="Mensaje-Error-DNI">El DNI debe contener exactamente 8 numeros</span>
                     </div>
                     <div class="Campo-Grupo">
-                        <label for="RegistrarCorreo">Correo Electrónico</label>
+                        <label for="RegistrarCorreo">Correo Electrónico</label><!--etiqueta de texto vinculada a un input
+                                                                                    el for conecta con la id del input
+                                                                                    para que si el usuario hace clic en el texto
+                                                                                    el cursor salte al campo-->
                         <input type="email" id="RegistrarCorreo" placeholder="ejemplo@dominio.com" required>
                     </div>
                     <div class="Campo-Grupo">
@@ -238,18 +341,24 @@
 
     </main>     
 
-    <footer class="Pie-Pagina-Gris">
+    <footer class="Pie-Pagina-Gris"><!--es el pie de pagina, se coloca al final de la pagina-->
 
         <div class="Footer-Izquierda">
             <img src="../Recursos/Imagenes/logo-doheal-blanco.png" alt="Logo-Do-Heal-Footer" class="Footer-Logo"> 
             <span class="Footer-Nombre-de-Startup">© 2026. Do-Heal</span>
         </div>
 
-        <div class="Footer-Derecha">
+        <div class="Footer-Centro">
             <a href="#" class="Enlace-Footer">Política de Privacidad</a>
-            <a href="#" class="Enlace-Footer">Términos y Condiciones</a>
+            <a href="#" class="Enlace-Footer">Términos y Condiciones</a>            
         </div>           
 
+        <div class="Footer-Derecha">
+            <img src="../Recursos/Imagenes/Certificado-WCAG.png" alt="Certificacion WCAG" class="Footer-Logo">
+            <img src="../Recursos/Imagenes/Certificado-URAC.png" alt="Certificacion URAC" class="Footer-Logo">
+        </div>
+
+        
     </footer>
     <!-- Aqui vinculamos con el script de java que tenemos en la carpeta-->
     <script src="../Scripts/scriptLandingPage.js"></script>
