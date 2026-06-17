@@ -9,7 +9,7 @@ const medicinasRegistradas = [
         caduca: "2027-06"
     },
     {
-        imagen: "https://eee",
+        imagen: "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/015814X.jpg",
         nombre: "Ibuprofeno",
         presentacion: "400 mg - Capsulas",
         estado: "Disponible",
@@ -33,7 +33,7 @@ const medicinasRegistradas = [
 
 const recetasRegistradas = [
     {
-        imagen: "",
+        imagen: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Fenobarbital_receta.jpg/120px-Fenobarbital_receta.jpg",
         medicamento: "Paracetamol",
         dosis: "500 mg",
         frecuencia: "Cada 8 horas",
@@ -42,7 +42,7 @@ const recetasRegistradas = [
         estado: "Activo"
     },
     {
-        imagen: "",
+        imagen: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Receta_Metronidazol.jpg/120px-Receta_Metronidazol.jpg",
         medicamento: "Ibuprofeno",
         dosis: "400 mg",
         frecuencia: "Cada 12 horas",
@@ -51,7 +51,7 @@ const recetasRegistradas = [
         estado: "Finalizado"
     },
     {
-        imagen: "",
+        imagen: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Clotrimazol_receta_MGT.jpg/120px-Clotrimazol_receta_MGT.jpg",
         medicamento: "Amoxicilina",
         dosis: "500 mg",
         frecuencia: "Cada 8 horas",
@@ -60,7 +60,7 @@ const recetasRegistradas = [
         estado: "Finalizado"
     },
     {
-        imagen: "",
+        imagen: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Typical_Doctors_Prescription.jpg/120px-Typical_Doctors_Prescription.jpg",
         medicamento: "Omeprazol",
         dosis: "20 mg",
         frecuencia: "1 vez al dia",
@@ -69,7 +69,7 @@ const recetasRegistradas = [
         estado: "Finalizado"
     },
     {
-        imagen: "",
+        imagen: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Clotrimazol_receta_MGT.jpg/120px-Clotrimazol_receta_MGT.jpg",
         medicamento: "Cetirizina",
         dosis: "10 mg",
         frecuencia: "1 vez al dia",
@@ -78,7 +78,7 @@ const recetasRegistradas = [
         estado: "Finalizado"
     },
         {
-        imagen: "",
+        imagen: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Vnv_pharmacie_03.jpg/120px-Vnv_pharmacie_03.jpg",
         medicamento: "Losartan",
         dosis: "50 mg",
         frecuencia: "1 vez al dia",
@@ -98,7 +98,7 @@ const dosisRegistradas = [
         estado: "Tomada"
     },
     {
-        imagen: "",
+        imagen: "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/015814X.jpg",
         medicamento: "Ibuprofeno",
         dosis: "400 mg",
         proximaToma: "2026-06-16 20:00",
@@ -157,7 +157,7 @@ const solicitudesRecibidas = [
         estadoReceta: "Pendiente"
     },
     {
-        imagen: "",
+        imagen: "https://images.pexels.com/photos/7561911/pexels-photo-7561911.jpeg",
         nombre: "Carlos Ramirez",
         medicamentoSolicitado: "Losartan 50 mg",
         ubicacion: "Ate, Lima",
@@ -173,7 +173,7 @@ const solicitudesRecibidas = [
         estadoReceta: "Rechazada"
     },
     {
-        imagen: "",
+        imagen: "https://images.pexels.com/photos/9661928/pexels-photo-9661928.jpeg",
         nombre: "Jorge Sanchez",
         medicamentoSolicitado: "Ibuprofeno 400 mg",
         ubicacion: "San Martin de Porres, Lima",
@@ -218,7 +218,7 @@ const solicitudesEnviadas = [
         hasta: "2026-06-20"
     },
     {
-        imagen: "",
+        imagen: "https://images.pexels.com/photos/9661928/pexels-photo-9661928.jpeg",
         medicamento: "Paracetamol 500 mg",
         caduca: "12/2026",
         publicador: "Jorge Sanchez",
@@ -227,7 +227,7 @@ const solicitudesEnviadas = [
         hasta: "2026-06-21"
     },
     {
-        imagen: "",
+        imagen: "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/015814X.jpg",
         medicamento: "Ibuprofeno 400 mg",
         caduca: "03/2027",
         publicador: "Lucia Gomez",
@@ -264,7 +264,7 @@ const busquedaPacientes = [
         diagnostico: "Infeccion respiratoria leve"
     },
     {
-        imagen: "https://",
+        imagen: "https://images.pexels.com/photos/7561911/pexels-photo-7561911.jpeg",
         nombre: "Carlos Ramirez",
         ubicacion: "Ate",
         solicita: "Insulina rapida",
@@ -278,7 +278,7 @@ const busquedaPacientes = [
         diagnostico: "Dolor muscular agudo"
     },
     {
-        imagen: "https://",
+        imagen: "https://images.pexels.com/photos/5308640/pexels-photo-5308640.jpeg",
         nombre: "Jorge Medina",
         ubicacion: "Comas",
         solicita: "Salbutamol inhalador",
@@ -305,7 +305,7 @@ const busquedaMedicinas = [
         numLote: "PTM240815"
     },
     {
-        imagen: "https://",
+        imagen: "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/015814X.jpg",
         nombreMedicamento: "Ibuprofeno",
         publicador: "Carlos Rojas",
         ubicacion: "Ate",
@@ -325,7 +325,7 @@ const busquedaMedicinas = [
     {
         imagen: "https://",
         nombreMedicamento: "Loratadina",
-        publicador: "Jorge Mendoza",
+        publicador: "Jorge Medina",
         ubicacion: "Lince",
         presentacion: "10 mg - tabletas",
         caduca: "06/2027",

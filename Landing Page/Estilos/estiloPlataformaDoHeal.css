@@ -53,6 +53,32 @@ nav.active {
     align-items: center;
 }
 
+.barra-busqueda {
+    display: flex;
+    width: 90%;
+    max-width: 700px;
+    min-width: 300px;
+    margin: 0 auto;
+    margin-top: 16px;
+    border-radius: 12px;
+    gap: 16px;
+    background: #60A5FA;
+    padding: 8px;
+}
+.barra-busqueda input {
+    flex: 1;
+    color:white;
+    border: none;
+    padding-left: 1rem;
+    background:none;
+    font-size: clamp(0.75rem, 2vw, 1.25rem);
+}
+.barra-busqueda input::placeholder {
+    color:white;
+
+}
+
+
 .header-plataforma {
     border-bottom-left-radius: 24px;
     border-bottom-right-radius: 24px;
@@ -202,13 +228,6 @@ nav.active {
 }
 
 
-
-
-/*Elementos pestaña salud */
-
-
-
-
 .listado {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -318,7 +337,134 @@ nav.active {
 }
 
 
+.perfil-cuadricula {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-areas:
+        "imagen datos"
+        "imagen estadisticas"
+        "medicinas tratamientos";
+    gap: 16px;
+    padding: 8px;
+}
 
+.perfil-imagen {
+    grid-area: imagen;
+    display: flex;
+    justify-content: center;
+}
+
+.perfil-datos {
+    grid-area: datos;
+}
+
+.perfil-estadisticas {
+    grid-area: estadisticas;
+}
+
+.perfil-medicinas{
+    grid-area: medicinas;
+}
+
+.perfil-tratamientos{
+    grid-area: tratamientos;
+}
+
+.deslizable-vertical {    
+    overflow-y: auto; 
+    border: 1px solid #A1A1A1;
+    padding: 8px;
+}
+
+
+.solicitudes-aceptadas-cuadricula {
+    display: grid;
+    grid-template-columns: minmax(100px, 1fr), minmax(300px,4fr);
+    grid-template-areas:
+        "contactos mensajeria mensajeria";
+    gap: 16px;
+    padding: 8px;
+    height: calc(100vh - 12rem);
+}
+
+.contactos {
+    grid-area: contactos;
+
+}
+
+.contactos-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 10px;
+}
+
+.contactos-lista div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 10px;
+    border-radius: 8px;
+}
+
+.mensajeria {
+    grid-area: mensajeria;
+}
+
+.chat-encabezado {
+    padding: 8px;
+    background: #2563ee;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px 10px 0 0;
+}
+
+.chat-caja {
+    flex: 1;
+    height:  calc(100vh - 17rem);
+    padding: 10px;
+    background: #f7f7f7;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.mensaje {
+    max-width: 75%;
+    padding: 8px 12px;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+.enviado {
+    align-self: flex-end;
+    background: #dcf8c6;
+}
+
+.recibido {
+    align-self: flex-start;
+    background: white;
+    border: 1px solid #ddd;
+}
+
+.chat-barra {
+    display: flex;
+    border-top: 1px solid #ddd;
+}
+.chat-barra input {
+    flex: 1;
+    padding: 8px;
+    border: none;
+    outline: none;
+}
+
+.chat-barra button {
+    padding: 8px 16px;
+    border: none;
+    background: #2563ee;
+    color: white;
+    cursor: pointer;
+}
 
   /* moviles */
 @media (max-width: 480px) {
@@ -362,7 +508,15 @@ nav.active {
 
 /* tablets */
 @media (max-width: 768px) {
-
+    .perfil-cuadricula {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+        "imagen"
+        "datos"
+        "estadisticas"
+        "medicinas"
+        "tratamientos";
+    }
 }   
 
 /* laptops */

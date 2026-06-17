@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="../Estilos/estiloComplementoDoHeal.css">
     <link rel="stylesheet" href="../Estilos/estiloPlataformaDoHeal.css">
     <script src="../Scripts/scriptPlataforma.js"></script>
+    <script src="../Scripts/scriptPlataformaVistas.js"></script>
+    <script src="../Scripts/scriptListadoElementos.js"></script>
 </head>
 
 <body>
@@ -19,10 +21,9 @@
                 </button>
                 <img src="../Recursos/Imagenes/logo-doheal-blanco-cortado.png" style="width: 4rem; height: auto;">
                 <h2>Do-Heal</h2>
-                
             </div>
             <div class="centrado">
-                <h1>Inicio</h1>
+                <h1>Perfil</h1>
             </div>
             <div class="derecha">
                 <h2>Usuario</h2>
@@ -55,45 +56,50 @@
             </a>
         </nav>
         
-        </header>
+    </header>
 
     <section class="seccion-plataforma">
-        <div class="contenedor-plataforma ">
-            <h1>Hola, Usuario</h1>
-            <h2>Bienvenido a Do-Heal</h2><br>
-            <h2 class="espaciado">¿Qué desea hacer hoy?</h2>
-            <div class="ordenar-horizontal" style="padding: 2rem;">
-                <a href="../Estructuras/vistaPlataformaBusqueda.html" class="boton-inicio">
-                    <div>
-                    <img src="../Recursos/Iconos/lupa.svg">
-                    <h3>Buscar medicamentos</h3>
+        <section class="perfil-cuadricula">
+
+            <section class="perfil-imagen">
+                <img src="../Recursos/Imagenes/no-image.png" alt="Usuario">
+            </section>
+
+            <section class="perfil-datos">
+                                <h3>Ana Rodríguez</h3>
+                <p>Usuario Verificado ✓</p>
+                <p>Lima - Surco</p>
+            </section>
+
+            <section class="perfil-estadisticas">
+                <h2>Estadísticas</h2>
+                <p>Donaciones: 28</p>
+                <p>Intercambios: 31</p>
+                <p>Reputación: 4.9 ★</p>
+            </section>
+
+            <section class="perfil-medicinas ">
+                <h2>Medicamentos Disponibles</h2>
+                <div class="deslizable-vertical cuadricula">
+                    <div class="elemento-cuadricula">
+                    <h3>Losartán 50mg</h3>
+                    <p>2 cajas</p>
+                    <p>Vence: 09/2027</p>
                     </div>
-                </a>
-                <!--agrega &modo=registrar cuando hayas implementado el registro de datos!!!-->
-                <a href="../Estructuras/vistaPlataformaSalud.html?vista=medicinas" class="boton-inicio">
-                <div>
-                    <img src="../Recursos/Iconos/pildora.svg">
-                    <h3>Registrar una medicina</h3>
                 </div>
-                </a>
+                
+            </section>
 
-                <a href="../Estructuras/vistaPlataformaBusqueda.html?vista=pacientes" class="boton-inicio">
-                <div>
-                    <img src="../Recursos/Iconos/usuarios.svg">
-                    <h3>Buscar pacientes</h3>
-                </div>
-                </a>
-
-                <a href="../Estructuras/vistaPlataformaSalud.html?vista=medicinas" class="boton-inicio">
-                <div>
-                    <img src="../Recursos/Iconos/almacen.svg">
-                    <h3>Ver medicinas registradas</h3>
-                </div>
-                </a>
-
-            </div>
-        </div>
+            <section class="perfil-tratamientos">
+                <h2>Actividad Reciente</h2>
+                <ul>
+                    <li>Donó Losartán a Carlos M.</li>
+                    <li>Recibió Ibuprofeno de María G.</li>
+                </ul>
+            </section>
+        </section> 
     </section>
+    
 </body>
 
 </html>
