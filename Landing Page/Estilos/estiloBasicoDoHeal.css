@@ -783,18 +783,96 @@ body {
 
 /*Esto es para optimizacion en celulares o tablets ya que la pantalla en mas pequeña que una computadora*/
 @media(max-width:968px) {
-    .Seccion-de-Bienvenida {
-        flex-direction: column;/*apila la imagen debajo del texto en pantallas pequeñas*/
-        text-align: center;
-        padding: 20px;
+
+    .Barra-superior{
+        height: auto;
+        padding: 10px 15px;
+        flex-direction: column;
+        gap: 10px;
     }
-    .Seccion-de-la-izquierda {
+
+    .Logo-con-Nombre{
+        width: 100%;
+        justify-content: center;
+        height: 45px;
+    }
+
+    .logo-imagen{
+        height: 40px;
+    }
+
+    .Nombre-de-Startup{
+        font-size: 22px;
+    }
+
+    .botones-centrales{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        width: 100%;
+    }
+
+    .enlace-menu{
+        font-size: 15px;
+    }
+
+    .botones-derechos{
+        width: 100%;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .btn-nav{
+        flex: 1;
+        max-width: 150px;
+        height: 40px;
+        font-size: 16px;
+        padding: 0 10px;
+    }
+
+
+
+
+
+    .Seccion-de-Bienvenida {
+        margin-top: 130px;
+        min-height: calc(100vh - 130px);
+        display: flex;
+        flex-direction: column;
         align-items: center;
         text-align: center;
+        padding: 20px;
+        gap: 40px;
     }
+
+    .Seccion-de-la-izquierda {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
     .btn-unete{
         align-self: center;/*centra el boton en pantallas moviles*/
     }
+
+    .Seccion-derecha{
+        display: flex;
+        width: 100%;
+        max-width: 450px;
+        justify-content: center;
+        margin: 0 auto;
+    }
+
+    .Medicamentos-donados-imagen{
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+    
+
+
 
     .Registro-Escalon1,
     .Validación-Escalon2,
@@ -802,6 +880,50 @@ body {
         padding-left: 20px; /*reduce el padding para pantallas pequeñas*/
         padding-right: 20px;
     }
+
+
+
+
+    .Seccion-Sobre-Nosotros{
+        padding: 40px 20px;
+    }
+
+    .Bloque-SobreNosotros,
+    .Bloque-SobreNosotros-Invertido{
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .Imagenes-SobreNosotros{
+        width: 100%;
+        max-width: 380px;
+        margin: 0 auto;
+    }
+
+    .SobreNosotros-Imagen{
+        width: 100%;
+        height: auto;
+    }
+
+    .Bloque-Texto-SobreNosotros {
+        width: 100%;
+        padding: 0;
+    }
+
+    .Subtitulo-SobreNosotros {
+        font-size: 26px;
+        margin-bottom: 15px;
+    }
+
+    .Texto-SobreNosotros {
+        font-size: 16px;
+        text-align: justify;
+    }
+
+
+
+
 
     .Bloque-ComoFunciona {
         flex-direction: column; /*apila la imagen encima del texto en pantallas pequeñas*/
@@ -816,6 +938,110 @@ body {
     .Descripcion-ComoFunciona {
         font-size: 18px; /*reduce el tamaño de la descripcion en pantallas pequeñas*/
     }
+
+
+
+
+
+
+    .Seccion-Funcionalidades{
+        padding: 40px 20px;
+        gap: 40px;
+    }
+
+    .Bloque-Funcionalidades,
+    .Bloque-Funcionalidades-Invertido {
+        flex-direction: column;
+        height: auto;
+        width: 100%;
+        padding: 30px 20px;
+        gap: 30px;
+    }
+
+    .Bloque-Texto-Funcionalidades{
+        text-align: center;
+    }
+
+    .Subtitulo-Funcionalidades{
+        font-size: 26px;
+    }
+
+    .Texto-Funcionalidades{
+        font-size: 18px;
+    }
+
+
+
+
+
+
+    .Seccion-Contacto{
+        padding: 40px 15px;
+        gap: 20px;
+    }
+
+    .Texto-Informativo-Contacto{
+        font-size: 18px;
+    }
+
+    .Bloque-Canales,
+    .Bloque-Redes-Sociales{
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        width: 100%;
+    }
+
+    .Bloque-Canales{
+        width: 100%;
+        max-width: 280px;
+        height: auto;
+        padding: 20px;
+        border-radius: 20px;
+    }
+
+    .Cuadro-Azul,
+    .Cuadro-Celeste{
+        height: auto;
+        min-height: 160px;
+    }
+
+    .Icono-Contacto{
+        width: 60px;
+        height: 60px;
+    }
+
+    .Icono-Redes-Sociales{
+        width: 50px;
+        height: 50px;
+    }
+
+    .Texto-Contacto{
+        font-size: 16px;
+    }
+
+
+
+
+
+    .Pie-Pagina-Gris{
+        flex-direction: column;
+        height: auto;
+        padding: 30px 20px;
+        gap: 20px;
+    }
+
+    .Footer-Centro{
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .Footer-Derecha{
+        justify-content: center;
+        gap: 15px;
+    }
+
 
 }    
 /*Espacio para el contenido principal para que no se oculte debajo de la barra fija, debe
