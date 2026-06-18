@@ -1,4 +1,10 @@
 header {
+    position: fixed;
+    width: 100%;
+    box-sizing: border-box;
+    top: 0;
+    left: 0;
+
     background: #2563ee;;
     padding: 0.25rem 0.5rem;
     color: white;
@@ -119,11 +125,15 @@ nav.active {
 }
 
 
+/*Esta es la seccion principal, todo el contenido deberia ir aca*/
 .seccion-plataforma {
+    padding: 8px;
+    padding-top: 80px; /*Tamanio del header, encabezado, eso de arriba*/
     display: flex;
     flex-direction: column;
     margin: 8px;
-    padding: 8px;
+    
+    
     min-height: 0;
     flex: 1;
 }

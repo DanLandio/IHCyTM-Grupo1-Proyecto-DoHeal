@@ -67,6 +67,9 @@
         <!--------------------------------------------------->
         <section class="vista seccion-interna" id="vista-enviadas">
             <hr>
+            <div class="contenedor-horizontal">
+            <h1 class="espaciado">Solicitudes de medicinas enviadas</h1>
+            </div>
             <div class="contenedor-plataforma listado" id="contenedor-solicitudes-enviadas">
                 <template id="plantilla-solicitudes-enviadas">
                 <div class="elemento-listado">
@@ -89,6 +92,9 @@
         <!--------------------------------------------------->
         <section class="vista seccion-interna" id="vista-recibidas">
             <hr>
+            <div class="contenedor-horizontal">
+            <h1 class="espaciado">Solicitudes de medicinas recibidas</h1>
+            </div>
             <div class="contenedor-plataforma listado" id="contenedor-solicitudes-recibidas">
                 <template id="plantilla-solicitudes-recibidas">
                 <div class="elemento-listado">
@@ -102,7 +108,7 @@
                     </div>
                     <div class="elemento-accion">
                         <button class="alterno">Rechazar</button>
-                        <button>Contactar</button>
+                        <button>Aceptar</button>
                     </div>
                 </div>
                 </template>
@@ -115,7 +121,9 @@
             <hr>
             <div class="solicitudes-aceptadas-cuadricula">
                 <div class="contactos">
-                    <h3>Usuarios Contactados</h3>
+                    <div class="contenedor-horizontal">
+                        <h1>Usuarios contactados</h1>
+                    </div>
                     <div class="contactos-lista deslizable-vertical">
                         <div class="contactos-elemento active"><img class="icono" src="https://images.pexels.com/photos/12639457/pexels-photo-12639457.jpeg" onerror="this.src='../Recursos/Imagenes/no-image.png'">Pedro Vargas</div>
                         <div class="contactos-elemento"><img class="icono" src="https://images.pexels.com/photos/11462529/pexels-photo-11462529.jpeg" onerror="this.src='../Recursos/Imagenes/no-image.png'">Lucia Gomez</div>
@@ -127,15 +135,15 @@
                     </div>
                     <div class="chat-caja deslizable-vertical">
                         <div class="mensaje recibido">
-                            Hola, ¿en qué puedo ayudarte?
+                            Hola, vi que tienes un paquete de Amoxicilina, ¿Sigue disponible?
                         </div>
 
                         <div class="mensaje enviado">
-                            Necesito información sobre un medicamento.
+                            Si, sigue disponible.
                         </div>
 
                         <div class="mensaje recibido">
-                            Claro, dime cuál buscas.
+                            Que bueno, hay que coordinar un lugar de entrega.
                         </div>
                     </div>
                     <div class="chat-barra">
