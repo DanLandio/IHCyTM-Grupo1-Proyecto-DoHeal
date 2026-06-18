@@ -26,7 +26,7 @@
                 <h1>Solicitudes</h1>
             </div>
             <div class="derecha">
-                <h2>Usuario</h2>
+                <h2>Jorge</h2>
                 <img src="../Recursos/Iconos/campana.svg" style="width: 2rem; height: auto;">
                 <img src="../Recursos/Iconos/engranaje.svg" style="width: 2rem; height: auto;">
             </div>
@@ -78,7 +78,7 @@
                     <p data-i="ubicacion"></p>
                     </div>
                     <div class="elemento-accion">
-                        <button>Contactar</button>
+                        <button class="alterno">Cancelar solicitud</button>
                     </div>
                 </div>
                 </template>
@@ -101,6 +101,7 @@
                     <p data-i="estadoReceta"></p>
                     </div>
                     <div class="elemento-accion">
+                        <button class="alterno">Rechazar</button>
                         <button>Contactar</button>
                     </div>
                 </div>
@@ -116,13 +117,13 @@
                 <div class="contactos">
                     <h3>Usuarios Contactados</h3>
                     <div class="contactos-lista deslizable-vertical">
-                        <div><img class="icono" src="../Recursos/Imagenes/logo-doheal.png">A</div>
-                        <div><img class="icono" src="../Recursos/Imagenes/logo-doheal.png">A</div>
+                        <div class="contactos-elemento active"><img class="icono" src="https://images.pexels.com/photos/12639457/pexels-photo-12639457.jpeg" onerror="this.src='../Recursos/Imagenes/no-image.png'">Pedro Vargas</div>
+                        <div class="contactos-elemento"><img class="icono" src="https://images.pexels.com/photos/11462529/pexels-photo-11462529.jpeg" onerror="this.src='../Recursos/Imagenes/no-image.png'">Lucia Gomez</div>
                     </div>
                 </div>
                 <div class="mensajeria">
                     <div class="chat-encabezado">
-                        Jorge
+                        Pedro Vargas
                     </div>
                     <div class="chat-caja deslizable-vertical">
                         <div class="mensaje recibido">
@@ -139,7 +140,7 @@
                     </div>
                     <div class="chat-barra">
                         <input type="text" placeholder="Escribe un mensaje..." />
-                        <button>Enviar</button>
+                        <button><img class="icono" src="../Recursos/Iconos/enviar.svg"></button>
                     </div>
                 </div>
             </div>

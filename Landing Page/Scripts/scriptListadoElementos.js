@@ -1,8 +1,8 @@
-//Datos
+//Datos estaticos de ejemplo
 
 const medicinasRegistradas = [
 {
-        imagen: "https://eee",
+        imagen: "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/067848X.jpg",
         nombre: "Paracetamol",
         presentacion: "500 mg - Tabletas",
         estado: "Disponible",
@@ -16,14 +16,14 @@ const medicinasRegistradas = [
         caduca: "2026-11"
     },
     {
-        imagen: "https://eee",
+        imagen: "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/071462X.jpg",
         nombre: "Amoxicilina",
         presentacion: "500 mg - Capsulas",
         estado: "Agotado",
         caduca: "2025-09"
     },
     {
-        imagen: "https://eee",
+        imagen: "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/013075X.jpg",
         nombre: "Loratadina",
         presentacion: "10 mg - Tabletas",
         estado: "Disponible",
@@ -90,7 +90,7 @@ const recetasRegistradas = [
 
 const dosisRegistradas = [
     {
-        imagen: "",
+        imagen: "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/067848X.jpg",
         medicamento: "Paracetamol",
         dosis: "500 mg",
         proximaToma: "2026-06-16 16:00",
@@ -106,7 +106,7 @@ const dosisRegistradas = [
         estado: "Inactivo"
     },
     {
-        imagen: "",
+        imagen: "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/071462X.jpg",
         medicamento: "Amoxicilina",
         dosis: "500 mg",
         proximaToma: "2026-06-16 14:00",
@@ -114,7 +114,7 @@ const dosisRegistradas = [
         estado: "Inactivo"
     },
     {
-        imagen: "",
+        imagen: "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/425383X.jpg",
         medicamento: "Omeprazol",
         dosis: "20 mg",
         proximaToma: "2026-06-16 07:00",
@@ -122,7 +122,7 @@ const dosisRegistradas = [
         estado: "Inactivo"
     },
     {
-        imagen: "",
+        imagen: "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/268147X.jpg",
         medicamento: "Cetirizina",
         dosis: "10 mg",
         proximaToma: "2026-06-16 22:00",
@@ -130,7 +130,7 @@ const dosisRegistradas = [
         estado: "Inactivo"
     },
     {
-        imagen: "",
+        imagen: "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/031394X.jpg",
         medicamento: "Losartan",
         dosis: "50 mg",
         proximaToma: "2026-06-17 09:00",
@@ -141,7 +141,7 @@ const dosisRegistradas = [
 
 const solicitudesRecibidas = [
     {
-        imagen: "",
+        imagen: "https://images.pexels.com/photos/9159678/pexels-photo-9159678.jpeg",
         nombre: "Luis Perez",
         medicamentoSolicitado: "Amoxicilina 500 mg",
         ubicacion: "San Juan de Lurigancho, Lima",
@@ -149,7 +149,7 @@ const solicitudesRecibidas = [
         estadoReceta: "Validada"
     },
     {
-        imagen: "",
+        imagen: "https://images.pexels.com/photos/35583068/pexels-photo-35583068.jpeg",
         nombre: "Maria Torres",
         medicamentoSolicitado: "Metformina 850 mg",
         ubicacion: "Villa El Salvador, Lima",
@@ -165,7 +165,7 @@ const solicitudesRecibidas = [
         estadoReceta: "Validada"
     },
     {
-        imagen: "",
+        imagen: "https://images.pexels.com/photos/13430313/pexels-photo-13430313.jpeg",
         nombre: "Ana Lopez",
         medicamentoSolicitado: "Paracetamol 500 mg",
         ubicacion: "Comas, Lima",
@@ -179,50 +179,34 @@ const solicitudesRecibidas = [
         ubicacion: "San Martin de Porres, Lima",
         recibido: "2026-06-14",
         estadoReceta: "Validada"
-    },
-    {
-        imagen: "",
-        nombre: "Lucia Gomez",
-        medicamentoSolicitado: "Omeprazol 20 mg",
-        ubicacion: "Los Olivos, Lima",
-        recibido: "2026-06-15",
-        estadoReceta: "Pendiente"
-    },
-    {
-        imagen: "",
-        nombre: "Pedro Vargas",
-        medicamentoSolicitado: "Cetirizina 10 mg",
-        ubicacion: "Surco, Lima",
-        recibido: "2026-06-16",
-        estadoReceta: "Validada"
     }
 ]
 
 const solicitudesEnviadas = [
     {
-        imagen: "",
+        imagen: "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/071462X.jpg",
         medicamento: "Amoxicilina 500 mg",
         caduca: "08/2027",
         publicador: "Maria Torres",
-        ubicacion: "Villa El Salvador, Lima",
+        ubicacion: "Villa El Salvador",
         enviado: "2026-06-10",
         hasta: "2026-06-18"
     },
     {
-        imagen: "",
+        imagen: "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/031394X.jpg",
         medicamento: "Losartan 50 mg",
         caduca: "05/2027",
         publicador: "Ana Lopez",
-        ubicacion: "Comas, Lima",
+        ubicacion: "Comas",
         enviado: "2026-06-12",
         hasta: "2026-06-20"
     },
     {
-        imagen: "https://images.pexels.com/photos/9661928/pexels-photo-9661928.jpeg",
+        imagen: "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/067848X.jpg",
         medicamento: "Paracetamol 500 mg",
         caduca: "12/2026",
         publicador: "Jorge Sanchez",
-        ubicacion: "San Martin de Porres, Lima",
+        ubicacion: "San Martin de Porres",
         enviado: "2026-06-13",
         hasta: "2026-06-21"
     },
@@ -231,25 +215,25 @@ const solicitudesEnviadas = [
         medicamento: "Ibuprofeno 400 mg",
         caduca: "03/2027",
         publicador: "Lucia Gomez",
-        ubicacion: "Los Olivos, Lima",
+        ubicacion: "Los Olivos",
         enviado: "2026-06-14",
         hasta: "2026-06-22"
     },
     {
-        imagen: "",
+        imagen: "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/425383X.jpg",
         medicamento: "Omeprazol 20 mg",
         caduca: "09/2026",
         publicador: "Pedro Vargas",
-        ubicacion: "Surco, Lima",
+        ubicacion: "Surco",
         enviado: "2026-06-15",
         hasta: "2026-06-23"
     },
     {
-        imagen: "",
+        imagen: "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/268147X.jpg",
         medicamento: "Cetirizina 10 mg",
         caduca: "01/2027",
         publicador: "Luis Perez",
-        ubicacion: "San Juan de Lurigancho, Lima",
+        ubicacion: "San Juan de Lurigancho",
         enviado: "2026-06-16",
         hasta: "2026-06-24"
     }
@@ -257,7 +241,7 @@ const solicitudesEnviadas = [
 
 const busquedaPacientes = [
     {
-        imagen: "https://",
+        imagen: "https://images.pexels.com/photos/18671528/pexels-photo-18671528.jpeg",
         nombre: "Maria Lopez",
         ubicacion: "San Juan de Lurigancho",
         solicita: "Paracetamol 500mg",
@@ -271,9 +255,9 @@ const busquedaPacientes = [
         diagnostico: "Diabetes tipo 2"
     },
     {
-        imagen: "https://",
-        nombre: "Lucia Fernandez",
-        ubicacion: "Miraflores",
+        imagen: "https://images.pexels.com/photos/11462529/pexels-photo-11462529.jpeg",
+        nombre: "Lucia Gomez",
+        ubicacion: "Los Olivos",
         solicita: "Ibuprofeno 400mg",
         diagnostico: "Dolor muscular agudo"
     },
@@ -285,9 +269,9 @@ const busquedaPacientes = [
         diagnostico: "Asma bronquial"
     },
     {
-        imagen: "https://",
-        nombre: "Ana Torres",
-        ubicacion: "Surco",
+        imagen: "https://images.pexels.com/photos/13430313/pexels-photo-13430313.jpeg",
+        nombre: "Ana Lopez",
+        ubicacion: "Comas",
         solicita: "Loratadina 10mg",
         diagnostico: "Rinitis alergica"
     }
@@ -296,7 +280,7 @@ const busquedaPacientes = [
 
 const busquedaMedicinas = [
     {
-        imagen: "https://",
+        imagen: "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/067848X.jpg",
         nombreMedicamento: "Paracetamol",
         publicador: "Maria Fernandez",
         ubicacion: "La Molina",
@@ -314,7 +298,7 @@ const busquedaMedicinas = [
         numLote: "IBF230921"
     },
     {
-        imagen: "https://",
+        imagen: "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/071462X.jpg",
         nombreMedicamento: "Amoxicilina",
         publicador: "Ana Torres",
         ubicacion: "San borja",
@@ -323,7 +307,7 @@ const busquedaMedicinas = [
         numLote: "AMX220745"
     },
     {
-        imagen: "https://",
+        imagen: "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/013075X.jpg",
         nombreMedicamento: "Loratadina",
         publicador: "Jorge Medina",
         ubicacion: "Lince",
@@ -332,7 +316,7 @@ const busquedaMedicinas = [
         numLote: "LRT241003"
     },
     {
-        imagen: "https://",
+        imagen: "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/425383X.jpg",
         nombreMedicamento: "Omeprazol",
         publicador: "Lucia Gomez",
         ubicacion: "Javier Prado",
@@ -341,7 +325,7 @@ const busquedaMedicinas = [
         numLote: "OMP230688"
     },
     {
-        imagen: "https://",
+        imagen: "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/085451X.jpg",
         nombreMedicamento: "Metformina",
         publicador: "Pedro Salazar",
         ubicacion: "Ceres",
@@ -350,7 +334,7 @@ const busquedaMedicinas = [
         numLote: "MTF240212"
     },
     {
-        imagen: "https://",
+        imagen: "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/031394X.jpg",
         nombreMedicamento: "Losartan",
         publicador: "Sofia Ramirez",
         ubicacion: "San Borja",
@@ -359,16 +343,16 @@ const busquedaMedicinas = [
         numLote: "LSR250117"
     },
     {
-        imagen: "https://",
+        imagen: "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/024881X.jpg",
         nombreMedicamento: "Vitamina C",
         publicador: "Diego Castro",
         ubicacion: "Ate Vitarte",
-        presentacion: "1000 mg - tabletas efervescentes",
+        presentacion: "10 mg - tabletas efervescentes",
         caduca: "05/2027",
         numLote: "VTC231544"
     },
     {
-        imagen: "https://",
+        imagen: "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/268147X.jpg",
         nombreMedicamento: "Cetirizina",
         publicador: "Valeria Paredes",
         ubicacion: "Huacho",
@@ -377,7 +361,7 @@ const busquedaMedicinas = [
         numLote: "CTZ240554"
     },
     {
-        imagen: "https://",
+        imagen: "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/016797X.jpg",
         nombreMedicamento: "Diclofenaco",
         publicador: "Ricardo Vega",
         ubicacion: "Barranco",

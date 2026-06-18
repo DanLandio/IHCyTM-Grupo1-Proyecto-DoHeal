@@ -337,44 +337,111 @@ nav.active {
 }
 
 
-.perfil-cuadricula {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    grid-template-areas:
-        "imagen datos"
-        "imagen estadisticas"
-        "medicinas tratamientos";
-    gap: 16px;
-    padding: 8px;
+.perfil-estructura {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
-.perfil-imagen {
-    grid-area: imagen;
+.perfil-perfil {
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+    justify-content:space-evenly;
+    flex:1;
 }
+
 
 .perfil-datos {
-    grid-area: datos;
+    display: flex;
+    flex-direction: column;
+    gap:4px
 }
 
 .perfil-estadisticas {
-    grid-area: estadisticas;
+    display: flex;
+    flex-direction: column;
+    gap:4px
+}
+
+.perfil-img {
+    height: 180px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+
+.perfil-menus {
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    gap: 1rem;
+    flex: 1;
 }
 
 .perfil-medicinas{
+    padding:8px;
+    flex:1;
     grid-area: medicinas;
+    height: 300px;
+    background:#60A5FA;
+    color: white;
+    border-radius: 12px;
+    max-width: 720px;
+}
+
+.perfil-medicinas-lista {
+    color: #334155;
+    padding: 8px;
+    max-height: 240px;
+}
+.perfil-medicinas-lista::-webkit-scrollbar {
+    background: #f5f7f5;
+    color: #2563ee;
+    border-radius: 12px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+}
+.perfil-medicinas-lista::-webkit-scrollbar-thumb {
+    background: #2563ee;
+    border-radius: 12px;
 }
 
 .perfil-tratamientos{
+    padding:8px;
+    flex:1;
     grid-area: tratamientos;
+    height: 300px;
+    background:#60A5FA;
+    color: white;
+    border-radius: 12px;
+    max-width: 720px;
+}
+
+.perfil-tratamientos-lista {
+    color: #334155;
+    padding: 8px;
+    max-height: 240px;
+}
+.perfil-tratamientos-lista::-webkit-scrollbar {
+    background: #f5f7f5;
+    color: #2563ee;
+    border-radius: 12px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+}
+.perfil-tratamientos-lista::-webkit-scrollbar-thumb {
+    background: #2563ee;
+    border-radius: 12px;
 }
 
 .deslizable-vertical {    
     overflow-y: auto; 
-    border: 1px solid #A1A1A1;
     padding: 8px;
 }
+
+
+
 
 
 .solicitudes-aceptadas-cuadricula {
@@ -389,41 +456,60 @@ nav.active {
 
 .contactos {
     grid-area: contactos;
-
+    
 }
+
 
 .contactos-lista {
     display: flex;
     flex-direction: column;
+    height:  calc(100vh - 14rem);
     gap: 8px;
-    padding: 10px;
+    padding: 8px;
+    border: 1px solid #A1A1A1;
+    border-radius: 12px;
 }
 
-.contactos-lista div {
+.contactos-elemento {
     display: flex;
     align-items: center;
     gap: 10px;
     padding: 8px 10px;
     border-radius: 8px;
+    border: 1px solid #A1A1A1;
+}
+.contactos-elemento img {
+    border-radius: 24px;
+    width: 3rem;
+    height: auto;
+    aspect-ratio: 1/1;
+}
+
+.contactos-elemento.active {
+    background: #60A5FA;
+    color:white;
 }
 
 .mensajeria {
     grid-area: mensajeria;
+    border: 1px solid #A1A1A1;
+    border-radius: 12px;
 }
 
 .chat-encabezado {
-    padding: 8px;
+    padding: 8px 1rem;
     background: #2563ee;
     color: white;
     font-weight: bold;
     border-radius: 10px 10px 0 0;
+    
 }
 
 .chat-caja {
     flex: 1;
-    height:  calc(100vh - 17rem);
+    height:  calc(100vh - 18rem);
     padding: 10px;
-    background: #f7f7f7;
+    background: #f5f7f5;
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -438,24 +524,31 @@ nav.active {
 
 .enviado {
     align-self: flex-end;
-    background: #dcf8c6;
+    border-bottom-right-radius: 0;
+    background: #2563ee;
+    color: white;
 }
 
 .recibido {
     align-self: flex-start;
-    background: white;
-    border: 1px solid #ddd;
+    border-bottom-left-radius: 0;
+    background: #60A5FA;
+    color: white;
 }
 
 .chat-barra {
     display: flex;
-    border-top: 1px solid #ddd;
+    border-top: 1px solid #A1A1A1;
 }
 .chat-barra input {
     flex: 1;
     padding: 8px;
     border: none;
     outline: none;
+    border-radius: 12px;
+}
+.chat-barra button {
+    border-top-right-radius: 0;
 }
 
 .chat-barra button {
@@ -508,14 +601,18 @@ nav.active {
 
 /* tablets */
 @media (max-width: 768px) {
-    .perfil-cuadricula {
-        grid-template-columns: 1fr;
-        grid-template-areas:
-        "imagen"
-        "datos"
-        "estadisticas"
-        "medicinas"
-        "tratamientos";
+    .perfil-perfil{
+        flex-direction: column;
+    }
+    .perfil-menus {
+        flex-direction: column;
+    }
+
+
+    .solicitudes-aceptadas-cuadricula {
+        grid-template-areas: 
+        "contactos"
+        "mensajeria";
     }
 }   
 
