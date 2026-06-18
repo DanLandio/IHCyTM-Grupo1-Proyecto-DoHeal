@@ -1,0 +1,1052 @@
+/*Esto se llama reset CSS: sirve para borrar lo que pone los navegadores como
+chrome, safari, firefox que son los margenes fantasmas, la cosa es que lo ponemos desde cero
+y el borderbox sirve pa si es que le agregas relleno a una caja, esta no se deforme ni
+ensanche*/
+* {
+    margin: 0; /*quita por defecto el margen exterior que los navegadores ponen para que no haya espacios en blanco indeseados*/
+    padding: 0;/*quita el relleno o espacio interior que los navegadores agregan por defecto dentro de los elementos*/
+    box-sizing: border-box;/*hace que el ancho y alto de una caja incluyan el relleno(padding y el borde, evitando que la caja
+                            se ensanche o deforme al meterle espacio interno)*/
+}
+/*Esto es el cuerpo de la pagina principal como dice su nombre body*/
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f5f7f5; /* Un fondo gris primero para la pagina principal */
+    color: #334155;
+}
+
+/*Estilos de la barra azul superior, debe tener el mismo nombre que el archivo html o si no no funciona*/
+.Barra-superior {
+    position: fixed;/*Mantiene la barra fija en la parte superior en caso de que scrollee para abajo o arriba el usuario*/
+    top: 0; /*pone la barra en la parte superior*/
+    left: 0; /*pone la barra lo mas a la izquierda*/
+    width: 100%; /*expande la barra, expande su ancho para que cubra todo el tamaño de la pantalla*/
+    height: 70px; /*Altura estandar para barras de navegacion moviles/web */
+    background-color: #2563ee; /*El color azul para la barra superior */
+    display: flex;/*activa el modelo de caja flexible, sirve pa alinear, posicionar y distribuir lo elementos internos de forma automatica*/
+    justify-content: space-between;/*es para empujar un bloque a la izquierda, uno pa el centro y otro pa la derecha*/
+    align-items: center;/*Hace que el texto o logo que este dentro de la barra se centre verticalmente de forma automatica*/
+    padding: 0 20px;/*agrega un relleno interior unicamente a los lados 0 arriba/abajo y 20 a la izquierda y derecha pa separar
+                    el contenido de los bordes*/
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /*Sombra ligera para darle profundidad*/
+    z-index: 1000; /*Asegura que la barra siempre se vea por encima de otras cosas que pongamos a la pag*/
+    }
+
+/*Esto para el logo con el texto de Do-Heal*/
+.Logo-con-Nombre {
+    background-color: #ffffff;
+    height: 50px; /* Un poco mas pequeño para que alcance en la barra superior*/
+    width: 200px;
+    padding: 0 12px;
+    border-radius: 10px; /*esto sirve para redondear los bordes del cuadro blanco*/
+    display: flex;
+    align-items: center;/*centra verticalmente todos los elementos que estan dentro de una caja flexible*/
+    gap: 20px; /*esto para poner espacio entre el logo y la palabra do-heal*/
+}
+
+/*Esto es para la imagen de la superior izquierda de la pag*/
+.logo-imagen {
+    height: 50px;/*ajusta la altura de la imagen para que no choque con lo bordes de la barra*/
+    width: auto; /*mantiene la proporcion original de la imagen pa que no se veo to estirao*/
+    border-radius: 4px; /*Esto es opcional pa darle un pequeño redondeado sutil a las esquinas del logo*/
+    object-fit: contain;/*Fuerza a que una imagen se adapte al tamaño de su caja sin estirarse ni deformarse, manteniendo
+                            su proporcion original*/
+}
+
+/*tamaño de letra para el doheal*/
+.Nombre-de-Startup {
+    color: rgb(63, 62, 62);/*define el color del texto usando el formato rgb*/
+    font-size: 25px;
+    font-weight: 700;/*letra en negrita para resaltar*/
+}
+
+.botones-centrales {
+    display: flex;
+    align-items: center;
+    gap: 40px;/*espacio entre los dos botones de registrase y ingresar*/
+}
+
+.enlace-menu {
+    color: #ffffff;
+    text-decoration: none; /*para quitar la linea subrayada que sale cuando es un link*/
+    font-size: 20px;
+    transition: opacity 0.2s;/*aplica una animacion suave de 0.2 segundos cuando la opacidad del elemento cambia
+                                por ejemplo cuando pasas el mouse por la parte de sobrenosotros*/
+}
+
+.enlace-menu:hover {
+    opacity: 0.8; /*para darle una opacidad sutil cuando pasas el mouse sobre la opcion*/
+}
+
+.botones-derechos {
+    display: flex;
+    gap: 12px;/*espacio entre los dos botones de registrase y ingresar*/
+}
+
+.btn-nav {
+    border: none;/*quita por completo el borde gris que los navegadores le ponen por defecto a los botones*/
+    padding: 8px 16px;
+    font-size: 20px;    
+    border-radius: 10px;
+    cursor: pointer;/*cambia la forma del puntero del mouse a una mano"mano con el indice" pa indicar que ese boton es clickeable*/
+    color: #ffffff;
+    transition: background-color 0.2s, transform 0.1s;/*crea un efecto de animacion suave de 0.2s para el color de fondo y 
+                                                        de 0.1s para los efectos de tamaño/escala*/
+}
+
+.btn-primario {    
+    height: 50px;
+    background-color: #06b6d4;
+}
+
+/*aplica estilos especificos unicamente cuando el usuario posiciona el cursor del mouse sobre el boton*/
+.btn-primario:hover{
+    background-color: #068ca3;
+}
+
+.btn-secundario {    
+    height: 50px;
+    background-color: #60a5fa;
+}
+
+.btn-secundario:hover {
+    background-color: #4c83c7;
+}
+
+/*Aplica estilos específicos en el microsegundo exacto en que el usuario mantiene presionado el clic del mouse sobre el boton*/
+.btn-nav:active {
+    transform: scale(0.96); /*efecto para cuando des click*/
+}
+
+
+
+
+/*Contenedor padre que divide la pantalla en dos bloques izquieda y derecha*/
+.Seccion-de-Bienvenida {
+    margin-top: 100px; /*esto es para que el contenido no se meta debajo de la barra fija, debe ser igual a la altura de la barra*/
+    display: flex;
+    position:relative;/*posiciona una caja como eje de referencia para que otros elementos de adentro se puedan acomodar de forma
+                        absoluta usando top, left o right*/
+    justify-content: center;/*centra horizontalmente todos los elementos internos dentro de un contenedor flexible*/
+    align-items: center;
+    min-height: calc(100vh - 100px);/*Ocupa el espacio disponible de la pantalla restante*/
+    width: 100%;
+    height: 100vh-100px;
+    margin: auto;/*Centra el contenido en pantallas muy anchas*/
+}
+
+/*Seccion de la izquierda*/
+.Seccion-de-la-izquierda {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;/*cambia la direccion de flexbox para que las cajas internos se apilen una debajo de la otra*/
+    justify-content: space-between;/*distribuye los elementos internos empujando uno al extremo izquierdo, otro pa la derecha
+                                    y lo que queda pa el centro con espacios identicos*/
+    gap: 36px; /*separacion vertical entre los elementos*/
+    text-align: center;
+    margin: 0 auto;/*centra automaticamente una caja de ancho fijo dentro de la pantalla, dejando margenes identicos a la
+                    izquierda y derecha*/
+}
+
+.Titulo-de-la-seccion {
+    font-size: 50px;
+    font-weight: 700;
+    color: #1e293b;
+    line-height: 1.2;/*define la altura de la linea de texto. Un valor de 1.2 evita que los renglones se encimen y mejora la
+                        lectura de los titulos*/
+}
+
+.Descripcion {
+    font-size: 18px;
+    color: #64748b;
+    line-height: 1.6;
+}
+
+.Seccion-de-abajo-izquierda {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;/*agrega una separacion exterior de 20 pixeles en la parte superior del elemento para empujar hacia abajo
+                        lo que este debajo*/
+    align-items: center;
+}
+
+.Subtitulo {
+    font-size: 35px;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.btn-unete {
+    background-color: #2563ee;
+    color: #ffffff;
+    border: none;
+    padding: 14px 28px;/*añade un relleno interno generoso de 14 pixeles por arriba y abajo y 28 pixeles pa los lados derecha y
+                        izquierda pa darle un tamaño comodo a un boton*/
+    font-size: 25px;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    align-self: center;/*evita que el boton se estire todo el ancho posible*/
+    box-shadow: 0 4px 6px -1px rgb(37, 99, 238, 0.2);/*genera una sombra exterior sutil de color azul con opacidad para darle un
+                                                        efecto estetico de flotacion y profundidad al boton*/
+    transition: background-color 0.2s, transform 0.1s;/*aplica transiciones suaves para animar los cambios de color de fondo
+                                                        y efectos de presion al hacer clic*/
+}
+
+.btn-unete:hover {
+    background-color: #1d4ed8;
+}
+
+.btn-unete:active {
+    transform: scale(0.97);/*reduce sutilmente el tamaño del boton al 97% de su escala original para simular fisicamente el efecto
+                            de que fue "hundido" o presionado*/
+}
+
+.Seccion-derecha {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.Seccion-derecha img {
+    height: 100vh;
+    object-fit: cover;/*hace que una imagen llene toda su caja contenedora y actue como fondo, si la imagen es muy grande, se
+                        recorta sola sin deformarse*/
+    display:block;/*fuerza a que un elemento se comporte como un bloque completo, obligandolo a ocupar todo el ancho disponible y
+                    dar un salto de linea*/
+    border-radius: 12px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);/*sombra sutil de profundidad*/
+}
+
+.Medicamentos-donados-imagen {
+    width: 100%;/*fuerza a que el ancho de un elemento o caja ocupe el 100% de la pantalla o del contenedor donde este metido*/
+    max-width: 550px;/*limita el ancho de una caja a un maximo de 550 pixeles si la pantalla es mas chica, se encoge solo, pero
+                        si es mas grande, no crece mas ahi*/
+    height: auto;/*hace que la altura del elemento se calcule automaticamente segun su contenido o proporcion original pa que las
+                    imagenes no se estiren*/
+    border-radius: 12px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+}
+
+
+
+
+
+/*Seccion de Sobre Nosotros---------------------------------------------------------------------*/
+
+.Seccion-Sobre-Nosotros {
+    padding: 80px 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    width: 100%;
+}
+
+.Titulo-Sobre-Nosotros {
+    text-align: center;
+    font-size: 50px;
+    font-weight: 700;
+    color: #1e293b;   
+    margin-bottom: 20px;/*añade una separacion o margen exterior de 20 pixeles unicamente en la parte inferior de la caja*/
+}
+
+.Bloque-SobreNosotros {
+    display: flex;    
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    width: 100%;
+}
+
+.Bloque-SobreNosotros-Invertido {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    width: 100%;
+    flex-direction: row-reverse; /*invierte el orden de los elementos pa la segunda fila*/
+}
+
+/*Se usa para todas las imagenes de la seccion sobrenosotros esto solo se puede usar en esta seccion de SobreNosotros*/
+.Imagenes-SobreNosotros {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Se usa para las dos imagenes en la seccion para no escribir una por una*/
+.SobreNosotros-Imagen {
+    width: 100%;
+    max-width: 550px;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);/*sombra sutil de profundidad*/
+    display: block;
+}
+
+/*Se usa los bloques de texto de sobrenostros*/
+.Bloque-Texto-SobreNosotros {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /*separacion vertical entre el titulo y la descripcion*/
+}
+
+/*Se usa para los dos subtitulos de la seccion sobrenosotros para no hacer uno por uno*/
+.Subtitulo-SobreNosotros {
+    font-size: 36px;
+    font-weight: 700;
+    color: #1e293b;
+    line-height: 1.2;
+}
+
+/*Se usa para los dos textos de la seccion sobrenosotros para no hacer uno por uno*/
+.Texto-SobreNosotros {
+    font-size: 22px;
+    color: #475569;
+    line-height: 1.6;
+}
+
+
+
+
+/*Seccion de Como Funciona------------------------------------------------*/
+
+.Seccion-Como-Funciona {
+    padding: 80px 0;
+    width: 100%;
+    background-color: #f5f7f5;
+    display: flex;
+    flex-direction: column;
+    gap: 50px; /*separacion vertical entre los dos bloques*/    
+}
+
+.Titulo-Como-Funciona {
+    text-align: center;
+    font-size: 50px;
+    font-weight: 700;
+    color: #1e293b;   
+    margin-bottom: 20px; 
+}
+
+.Bloques-de-ComoFunciona {
+    display: flex;
+    flex-direction: column;
+    gap: 24px; /*separacion vertical entre los bloques blancos*/
+    width: 100%;
+}
+
+.Bloque-ComoFunciona {
+    background-color: #ffffff;
+    width: 100%;
+    min-height: 180px;/*define que la caja debe medir como minimo 180 pixeles de alto; si hay mucho texto, la caja puede crecer
+                        mas, pero nunca medira menos de eso*/
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding-top: 30px;/*agrega un espacio o colchon interior de 30 pixeles en la parte superior de la caja*/
+    padding-bottom: 30px;/*la misma wbda en la parte inferior de la caja*/
+    padding-right: 60px;/*la misma wbda pero en la parte derecha*/
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+}
+
+.Registro-Escalon1 {
+    padding-left: 10%;/*agrega un espacio interior a la izquierda equivalente al 10% del ancho total de la pantalla. Sirve
+                        para crear el primer escalon*/
+}
+
+.Validación-Escalon2 {
+    padding-left: 18%;
+}
+
+.Coordinacion-Escalon3{
+    padding-left: 26%;
+}
+
+.Imagenes-ComoFunciona {
+    flex-shrink: 0;/*evita que el contenedor flexible aplaste o achique esta caja si el espacio de la pantalla se reduce, manteniendo
+                    su tamaño intacto*/
+    width: 120px;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ComoFunciona-Imagen{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;/*evita que se estire o se deforme la imagen*/
+    border-radius: 20px;
+}
+
+.Bloque-TextoComoFunciona{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.Subtitulo-ComoFunciona {
+    font-size: 30px;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.Descripcion-ComoFunciona {
+    font-size: 20px;
+    color: #475569;
+    line-height: 1.5;
+}
+
+.Boton-ComoFunciona{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+
+
+/*Seccion de Funcionalidades------------------------------------------------*/
+.Seccion-Funcionalidades {
+    padding: 80px 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    width: 100%;
+}
+
+.Titulo-Funcionalidades {
+    text-align: center;
+    font-size: 50px;
+    font-weight: 700;
+    color: #1e293b;   
+    margin-bottom: 20px; 
+}
+
+.Bloque-Funcionalidades {
+    background-color: #334155;
+    height: 500px;
+    width: 400px;
+    padding: 0 12px;
+    border-radius: 30px; /*esto sirve para redondear los bordes */
+
+    display: flex;    
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    width: 100%;
+}
+
+.Bloque-Funcionalidades-Invertido {
+     background-color: #334155;
+    height: 500px;
+    width: 400px;
+    padding: 0 30px;
+    border-radius: 30px; /*esto sirve para redondear los bordes */
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    width: 100%;
+    flex-direction: row-reverse; /*invierte el orden de los elementos pa la segunda fila*/
+}
+
+.Imagenes-Funcionalidades {
+    flex: 1;/*hace que una caja crezca de forma flexible para ocupar todo el espacio libre que quede disponible dentro de un contenedor*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Funcionalidades-Imagen {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);/*sombra sutil de profundidad*/
+    display: block;
+}
+
+.Bloque-Texto-Funcionalidades {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /*separacion vertical entre el titulo y la descripcion*/
+}
+
+.Subtitulo-Funcionalidades {
+    font-size: 36px;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.2;
+}
+
+.Texto-Funcionalidades {
+    font-size: 22px;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+
+
+
+
+/*Seccion de Contacto------------------------------------------------*/
+
+.Seccion-Contacto {
+    padding: 80px 20px;
+    width: 100%;
+    background-color: #f5f7f5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px; /*separacion vertical entre el titulo y el formulario*/
+}
+
+.Titulo-Contacto {
+    text-align: center;
+    font-size: 50px;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.Texto-Informativo-Contacto {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+    color: #334155;
+    margin-top: 10px;
+}
+
+.Bloque-Canales {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 20px;
+}
+
+.Bloque-Redes-Sociales {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    width: 100%;
+    max-width: 900px;
+}
+
+.Cuadro-Canales {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    border-radius: 30px;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s;
+}
+
+.Cuadro-Canales:hover {
+    transform: translateY(-5px); /*efecto de elevacion al pasar el mouse*/
+}
+
+.Cuadro-Azul {
+    background-color: #60a5fa;
+    width: 260px;
+    height: 260px;
+}
+
+.Cuadro-Celeste {
+    background-color: #06b6d4;
+    width: 180px;
+    height: 180px;
+}
+
+.Icono-Contacto {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+.Icono-Redes-Sociales {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    transition: transform 0.2s;
+}
+
+.Texto-Contacto {
+    color: #ffffff;
+    font-size: 20px;    
+    font-weight: 700;
+    text-align: center;
+}
+
+
+
+/*Seccion del pie de Pagina----------------------------------------------------------*/
+
+.Pie-Pagina-Gris {
+    background-color: #94a3b8;
+    width: 100%;
+    height: 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 60px;
+    margin-top: 50px;
+}
+
+.Footer-Izquierda {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.Footer-Logo {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
+}
+
+.Footer-Nombre-de-Startup {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.Footer-Centro{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.Footer-Derecha {
+    display: flex;
+    gap: 40px;
+}
+
+.Enlace-Footer{
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 600;
+    transition: opacity 0.2s;
+}
+
+.Enlace-Footer:hover {
+    opacity: 0.8;
+    text-decoration: underline; /*subraya el enlace al pasar el mouse para indicar que es interactivo*/
+}
+
+
+/*Seccion de los Formularios pa lo de iniciar sesion y registro------------------------------------------------*/
+
+.Form-Fondo {
+    display: none; /*oculta el formulario por defecto, se mostrara al hacer click en el boton de registrarse o iniciar sesion*/
+    position: fixed;/*fija un elemento en la pantalla para que se quede congelao ahi mismo donde lo pones*/
+    top: 0;/*se usa junto con position para pegar el elemento completamente al borde superior de la pantalla*/
+    left: 0;/*la misma wbda pero pa la izquierda*/
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /*esto hace el fondo semitransparente pa enfocar mas la atencion en el formulario*/
+    backdrop-filter: blur(4px); /*esto agrega un efecto de desenfoque al fondo pa que el formulario resalte mas*/
+    z-index: 2000; /*esto asegura que el formulario se muestre por encima de la barra fija y cualquier otro contenido de la pagina*/
+    justify-content: center;
+    align-items: center;
+}
+
+/*Esto es la caja blanca central del formulario*/
+.Form-Contenido{
+    background-color: #2563ee;
+    width: 100%;
+    max-width: 480px;
+    padding: 40px;
+    border-radius: 24px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    position:relative;
+    font-family: 'Inter', sans-serif;
+}
+
+/*Esto es pa el boton x pa cerrar el formulario*/
+
+.Btn-Cerrar-Formulario{
+    position: absolute;/*saca un elemento del flujo normal del diseño y lo posiciona de forma libre e independiente usando como
+                        coordenadas la caja padre mas cercana*/
+    top: 20px;
+    right: 25px;
+    background-color: none;
+    border: none;
+    font-size: 32px;
+    cursor: pointer;
+    color: #94a3b8;
+    background: none;
+    outline: none;/*elimina la linea de contorno azul o negra brillante que los navegadores te ponen por defecto a los campos
+                    de texto e inputs al seleccionarlos*/
+}
+
+.Btn-Cerrar-Formulario:hover {
+    color: #334155;
+}
+
+.Titulo-Formulario{
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 25px;
+}
+
+.Modelo-Formulario{
+    display:none; /*oculta el contenido del formulario por defecto, se mostrara al hacer click en la pestaña correspondiente*/
+    flex-direction: column;
+    gap: 20px;
+}
+
+.Modelo-Formulario.Activo {
+    display:flex;/*Muestra solo el formulario activo*/
+}
+
+.Campo-Grupo {
+    display:flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.Campo-Grupo label {
+    font-size: 16px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.Campo-Grupo input {
+    padding: 12px 16px;
+    font-size: 16px;
+    border: 2px solid #cbd5e1;
+    border-radius: 12px;
+    outline: none;        
+    transition: border-color 0.2s;
+}
+
+.Campo-Grupo input:focus {
+    border-color: #2563ee;
+}
+
+.Btn-Form-Accion{
+    Border: none;
+    padding: 14px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffffff;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.2s;
+}
+
+.Btn-Azul {
+    background-color: #06b6d4;
+}
+
+.Btn-Azul:hover {
+    background-color: #0891b2;
+}
+
+.Btn-Celeste {
+    background-color: #06b6d4;
+}
+
+.Btn-Celeste:hover {
+    background-color: #0891b2;
+}
+
+.Mensaje-Error-DNI {
+    display: none;
+    font-size: 14px;
+    font-weight: 600;
+    color: #ef4444;
+    margin-top: 4px;
+}
+
+
+
+
+/*Esto es para optimizacion en celulares o tablets ya que la pantalla en mas pequeña que una computadora*/
+@media(max-width:968px) {
+
+    .Barra-superior{
+        height: auto;
+        padding: 10px 15px;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .Logo-con-Nombre{
+        width: 100%;
+        justify-content: center;
+        height: 45px;
+    }
+
+    .logo-imagen{
+        height: 40px;
+    }
+
+    .Nombre-de-Startup{
+        font-size: 22px;
+    }
+
+    .botones-centrales{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        width: 100%;
+    }
+
+    .enlace-menu{
+        font-size: 15px;
+    }
+
+    .botones-derechos{
+        width: 100%;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .btn-nav{
+        flex: 1;
+        max-width: 150px;
+        height: 40px;
+        font-size: 16px;
+        padding: 0 10px;
+    }
+
+
+
+
+
+    .Seccion-de-Bienvenida {
+        margin-top: 130px;
+        min-height: calc(100vh - 130px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+        gap: 40px;
+    }
+
+    .Seccion-de-la-izquierda {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn-unete{
+        align-self: center;/*centra el boton en pantallas moviles*/
+    }
+
+    .Seccion-derecha{
+        display: flex;
+        width: 100%;
+        max-width: 450px;
+        justify-content: center;
+        margin: 0 auto;
+    }
+
+    .Medicamentos-donados-imagen{
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+    
+
+
+
+    .Registro-Escalon1,
+    .Validación-Escalon2,
+    .Coordinacion-Escalon3 {
+        padding-left: 20px; /*reduce el padding para pantallas pequeñas*/
+        padding-right: 20px;
+    }
+
+
+
+
+    .Seccion-Sobre-Nosotros{
+        padding: 40px 20px;
+    }
+
+    .Bloque-SobreNosotros,
+    .Bloque-SobreNosotros-Invertido{
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .Imagenes-SobreNosotros{
+        width: 100%;
+        max-width: 380px;
+        margin: 0 auto;
+    }
+
+    .SobreNosotros-Imagen{
+        width: 100%;
+        height: auto;
+    }
+
+    .Bloque-Texto-SobreNosotros {
+        width: 100%;
+        padding: 0;
+    }
+
+    .Subtitulo-SobreNosotros {
+        font-size: 26px;
+        margin-bottom: 15px;
+    }
+
+    .Texto-SobreNosotros {
+        font-size: 16px;
+        text-align: justify;
+    }
+
+
+
+
+
+    .Bloque-ComoFunciona {
+        flex-direction: column; /*apila la imagen encima del texto en pantallas pequeñas*/
+        text-align: center;
+        gap: 20px; /*aumenta el espacio entre la imagen y el texto en pantallas pequeñas*/
+    }
+
+    .Subtitulo-ComoFunciona {
+        font-size: 24px; /*reduce el tamaño del subtitulo en pantallas pequeñas*/
+    }
+
+    .Descripcion-ComoFunciona {
+        font-size: 18px; /*reduce el tamaño de la descripcion en pantallas pequeñas*/
+    }
+
+
+
+
+
+
+    .Seccion-Funcionalidades{
+        padding: 40px 20px;
+        gap: 40px;
+    }
+
+    .Bloque-Funcionalidades,
+    .Bloque-Funcionalidades-Invertido {
+        flex-direction: column;
+        height: auto;
+        width: 100%;
+        padding: 30px 20px;
+        gap: 30px;
+    }
+
+    .Bloque-Texto-Funcionalidades{
+        text-align: center;
+    }
+
+    .Subtitulo-Funcionalidades{
+        font-size: 26px;
+    }
+
+    .Texto-Funcionalidades{
+        font-size: 18px;
+    }
+
+
+
+
+
+
+    .Seccion-Contacto{
+        padding: 40px 15px;
+        gap: 20px;
+    }
+
+    .Texto-Informativo-Contacto{
+        font-size: 18px;
+    }
+
+    .Bloque-Canales,
+    .Bloque-Redes-Sociales{
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        width: 100%;
+    }
+
+    .Bloque-Canales{
+        width: 100%;
+        max-width: 280px;
+        height: auto;
+        padding: 20px;
+        border-radius: 20px;
+    }
+
+    .Cuadro-Azul,
+    .Cuadro-Celeste{
+        height: auto;
+        min-height: 160px;
+    }
+
+    .Icono-Contacto{
+        width: 60px;
+        height: 60px;
+    }
+
+    .Icono-Redes-Sociales{
+        width: 50px;
+        height: 50px;
+    }
+
+    .Texto-Contacto{
+        font-size: 16px;
+    }
+
+
+
+
+
+    .Pie-Pagina-Gris{
+        flex-direction: column;
+        height: auto;
+        padding: 30px 20px;
+        gap: 20px;
+    }
+
+    .Footer-Centro{
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .Footer-Derecha{
+        justify-content: center;
+        gap: 15px;
+    }
+
+
+}    
+/*Espacio para el contenido principal para que no se oculte debajo de la barra fija, debe
+tener el mismo nombre del archivo html o si no no funciona*/
+.Contenido-principal {
+    margin-top: 60px;/*si no ponemos esto el contenido principal se meteria debajo de la barra y no se veria*/
+    padding: 20px;
+}
