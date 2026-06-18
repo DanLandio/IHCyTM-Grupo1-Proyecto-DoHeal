@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documento</title>
+    <link rel="stylesheet" href="../Estilos/estiloComplementoDoHeal.css">
+    <link rel="stylesheet" href="../Estilos/estiloPlataformaDoHeal.css">
+    <script src="../Scripts/scriptPlataforma.js"></script>
+    <script src="../Scripts/scriptPlataformaVistas.js"></script>
+    <script src="../Scripts/scriptListadoElementos.js"></script>
+</head>
+
+<body>
+    <header class="header-plataforma">
+        <div class="elementos-header-plataforma">
+            
+            <div class="izquierda">
+                <button class="hamburguesa" id="boton-hamburguesa" onclick="abreMenuHamburguesa()">
+                ☰
+                </button>
+                <div id="logo-doheal">
+                <img src="../Recursos/Imagenes/logo-doheal-blanco-cortado.png" style="width: 4rem; height: auto;">
+                <h2>Do-Heal</h2>
+                </div>
+            </div>
+            <div class="centrado">
+                <h1>Solicitudes</h1>
+            </div>
+            <div class="derecha">
+                <h2>Jorge</h2>
+                <img src="../Recursos/Iconos/campana.svg" style="width: 2rem; height: auto;">
+                <img src="../Recursos/Iconos/engranaje.svg" style="width: 2rem; height: auto;">
+            </div>
+        </div>
+        
+
+        <nav id="menu-hamburguesa">
+            <a href="../Estructuras/vistaPlataformaInicio.html">
+                <img src="../Recursos/Iconos/casa.svg" class="icono">
+                Inicio
+            </a>
+            <a href="../Estructuras/vistaPlataformaSalud.html">
+                <img src="../Recursos/Iconos/pildora.svg" class="icono">
+                Salud
+            </a>
+            <a href="../Estructuras/vistaPlataformaBusqueda.html">
+                <img src="../Recursos/Iconos/lupa.svg" class="icono">
+                Buscar
+            </a>
+            <a href="../Estructuras/vistaPlataformaSolicitudes.html">
+                <img src="../Recursos/Iconos/correo.svg" class="icono">
+                Solicitudes
+            </a>
+            <a href="../Estructuras/vistaPlataformaPerfil.html">
+                <img src="../Recursos/Iconos/usuario.svg" class="icono">
+                Perfil
+            </a>
+        </nav>
+        
+        </header>
+        
+    <section class="seccion-plataforma">
+        <div class="division-vistas ordenar-horizontal">
+            <button id="boton-vista-enviadas" onclick="cambiarVista('vista-enviadas','boton-vista-enviadas')">Enviadas</button>
+            <button id="boton-vista-recibidas" onclick="cambiarVista('vista-recibidas','boton-vista-recibidas')">Recibidas</button>
+            <button id="boton-vista-aceptadas" onclick="cambiarVista('vista-aceptadas','boton-vista-aceptadas')">Aceptadas</button>
+        </div>
+        <!--------------------------------------------------->
+        <section class="vista seccion-interna" id="vista-enviadas">
+            <hr>
+            <div class="contenedor-horizontal">
+            <h1 class="espaciado">Solicitudes de medicinas enviadas</h1>
+            </div>
+            <div class="contenedor-plataforma listado" id="contenedor-solicitudes-enviadas">
+                <template id="plantilla-solicitudes-enviadas">
+                <div class="elemento-listado">
+                    <img data-i="imagen" class="elemento-img" src="../Recursos/Imagenes/logo-doheal.png">
+                    <div class="elemento-texto">
+                    <h3 data-i="medicamento" class="elemento-titulo"></h3>
+                    <p data-i="caduca"></p>
+                    <p data-i="publicador"></p>
+                    <p data-i="ubicacion"></p>
+                    </div>
+                    <div class="elemento-accion">
+                        <button class="alterno">Cancelar solicitud</button>
+                    </div>
+                </div>
+                </template>
+                <script>mostrarLista(solicitudesEnviadas, 'plantilla-solicitudes-enviadas', 'contenedor-solicitudes-enviadas')</script>
+            </div>
+        </section>
+
+        <!--------------------------------------------------->
+        <section class="vista seccion-interna" id="vista-recibidas">
+            <hr>
+            <div class="contenedor-horizontal">
+            <h1 class="espaciado">Solicitudes de medicinas recibidas</h1>
+            </div>
+            <div class="contenedor-plataforma listado" id="contenedor-solicitudes-recibidas">
+                <template id="plantilla-solicitudes-recibidas">
+                <div class="elemento-listado">
+                    <img data-i="imagen" class="elemento-img" src="../Recursos/Imagenes/logo-doheal.png">
+                    <div class="elemento-texto">
+                    <h3 data-i="nombre" class="elemento-titulo"></h3>
+                    <p data-i="medicamentoSolicitado"></p>
+                    <p data-i="ubicacion"></p>
+                    <p data-i="recibido"></p>
+                    <p data-i="estadoReceta"></p>
+                    </div>
+                    <div class="elemento-accion">
+                        <button class="alterno">Rechazar</button>
+                        <button>Aceptar</button>
+                    </div>
+                </div>
+                </template>
+                <script>mostrarLista(solicitudesRecibidas, 'plantilla-solicitudes-recibidas', 'contenedor-solicitudes-recibidas')</script>
+            </div>
+        </section>
+
+        <!--------------------------------------------------->
+        <section class="vista seccion-interna" id="vista-aceptadas">
+            <hr>
+            <div class="solicitudes-aceptadas-cuadricula">
+                <div class="contactos">
+                    <div class="contenedor-horizontal">
+                        <h1>Usuarios contactados</h1>
+                    </div>
+                    <div class="contactos-lista deslizable-vertical">
+                        <div class="contactos-elemento active"><img class="icono" src="https://images.pexels.com/photos/12639457/pexels-photo-12639457.jpeg" onerror="this.src='../Recursos/Imagenes/no-image.png'">Pedro Vargas</div>
+                        <div class="contactos-elemento"><img class="icono" src="https://images.pexels.com/photos/11462529/pexels-photo-11462529.jpeg" onerror="this.src='../Recursos/Imagenes/no-image.png'">Lucia Gomez</div>
+                    </div>
+                </div>
+                <div class="mensajeria">
+                    <div class="chat-encabezado">
+                        Pedro Vargas
+                    </div>
+                    <div class="chat-caja deslizable-vertical">
+                        <div class="mensaje recibido">
+                            Hola, vi que tienes un paquete de Amoxicilina, ¿Sigue disponible?
+                        </div>
+
+                        <div class="mensaje enviado">
+                            Si, sigue disponible.
+                        </div>
+
+                        <div class="mensaje recibido">
+                            Que bueno, hay que coordinar un lugar de entrega.
+                        </div>
+                    </div>
+                    <div class="chat-barra">
+                        <input type="text" placeholder="Escribe un mensaje..." />
+                        <button><img class="icono" src="../Recursos/Iconos/enviar.svg"></button>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+    </section>
+
+    <script>
+        //const parametrosLink = new URLSearchParams(window.location.search);
+        //hacer algo con esos parametros si es necesario
+        cambiarVista('vista-enviadas','boton-vista-enviadas')
+    </script>
+</body>
+
+</html>

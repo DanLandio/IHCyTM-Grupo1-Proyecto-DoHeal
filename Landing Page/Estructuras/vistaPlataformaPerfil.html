@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documento</title>
+    <link rel="stylesheet" href="../Estilos/estiloComplementoDoHeal.css">
+    <link rel="stylesheet" href="../Estilos/estiloPlataformaDoHeal.css">
+    <script src="../Scripts/scriptPlataforma.js"></script>
+    <script src="../Scripts/scriptPlataformaVistas.js"></script>
+    <script src="../Scripts/scriptListadoElementos.js"></script>
+</head>
+
+<body>
+    <header class="header-plataforma">
+        <div class="elementos-header-plataforma">
+            
+            <div class="izquierda">
+                <button class="hamburguesa" id="boton-hamburguesa" onclick="abreMenuHamburguesa()">
+                ☰
+                </button>
+                <div id="logo-doheal">
+                <img src="../Recursos/Imagenes/logo-doheal-blanco-cortado.png" style="width: 4rem; height: auto;">
+                <h2>Do-Heal</h2>
+                </div>
+            </div>
+            <div class="centrado">
+                <h1>Perfil</h1>
+            </div>
+            <div class="derecha">
+                <h2>Jorge</h2>
+                <img src="../Recursos/Iconos/campana.svg" style="width: 2rem; height: auto;">
+                <img src="../Recursos/Iconos/engranaje.svg" style="width: 2rem; height: auto;">
+            </div>
+        </div>
+        
+
+        <nav id="menu-hamburguesa">
+            <a href="../Estructuras/vistaPlataformaInicio.html">
+                <img src="../Recursos/Iconos/casa.svg" class="icono">
+                Inicio
+            </a>
+            <a href="../Estructuras/vistaPlataformaSalud.html">
+                <img src="../Recursos/Iconos/pildora.svg" class="icono">
+                Salud
+            </a>
+            <a href="../Estructuras/vistaPlataformaBusqueda.html">
+                <img src="../Recursos/Iconos/lupa.svg" class="icono">
+                Buscar
+            </a>
+            <a href="../Estructuras/vistaPlataformaSolicitudes.html">
+                <img src="../Recursos/Iconos/correo.svg" class="icono">
+                Solicitudes
+            </a>
+            <a href="../Estructuras/vistaPlataformaPerfil.html">
+                <img src="../Recursos/Iconos/usuario.svg" class="icono">
+                Perfil
+            </a>
+        </nav>
+        
+    </header>
+
+    <section class="seccion-plataforma">
+        <section class="perfil-estructura seccion-interna">
+
+            <div class="perfil-perfil">
+            <img class="perfil-img" src="../Recursos/Imagenes/fotoUsuario.jpeg" alt="Usuario">
+
+            <div class="perfil-datos">
+                <h3>Jorge Ramirez</h3>
+                <p>Ubicacion: Surco, Lima</p>
+                <p>Edad: 31</p>
+                <p>Fecha de registro: 15/06/2026</p>
+                <p>Rol principal: Receptor</p>
+                <button>Editar informacion</button>
+            </div>
+
+            <div class="perfil-estadisticas">
+                <h3>Estadísticas</h3>
+                <p>Donaciones realizadas: 5</p>
+                <p>Solicitudes enviadas: 12</p>
+                <p>Intercambios: 17</p>
+                <p>Distancia de entrega: 5 km</p>
+                <p>Reputación: 4.9/5</p>
+            </div>
+            
+            </div>
+            
+            <div class="perfil-menus">
+            <div class="perfil-medicinas ">
+                <h2>Medicamentos Disponibles</h2>
+                <div class="deslizable-vertical perfil-medicinas-lista" id="contenedor-medicinas">
+                    <template id="plantilla-medicinas">
+                    <div class="elemento-listado">
+                    <img data-i="imagen" src="../Recursos/Imagenes/logo-doheal.png" class="mediano">
+                    <div>
+                        <h3 data-i="nombre">Medicamento</h3>
+                        <p data-i="caduca">Caduca</p>
+                    </div>
+                    </div>
+                    </template>
+                </div>
+                <script>mostrarLista(medicinasRegistradas, 'plantilla-medicinas', 'contenedor-medicinas')</script>
+            </div>
+
+            <div class="perfil-tratamientos">
+                <h2>Tratamientos Actuales</h2>
+                <div class="deslizable-vertical perfil-tratamientos-lista" id="contenedor-recetas">
+                    <template id="plantilla-recetas">
+                    <div class="elemento-listado">
+                    <img data-i="imagen" src="../Recursos/Imagenes/logo-doheal.png" class="mediano">
+                    <div>
+                        <h3 data-i="diagnostico">Diagnostico</h3>
+                        <p data-i="medicamento">Medicamento</p>
+                        <p data-i="frecuencia">Frecuencia</p>
+                    </div>
+                    </div>
+                    </template>
+                </div>
+                <script>mostrarLista(recetasRegistradas, 'plantilla-recetas', 'contenedor-recetas')</script>
+            </div>
+            </div>
+        </section> 
+    </section>
+    
+</body>
+
+</html>
