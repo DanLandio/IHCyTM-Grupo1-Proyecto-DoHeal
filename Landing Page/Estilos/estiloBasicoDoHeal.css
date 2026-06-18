@@ -30,6 +30,8 @@ body {
                     el contenido de los bordes*/
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /*Sombra ligera para darle profundidad*/
     z-index: 1000; /*Asegura que la barra siempre se vea por encima de otras cosas que pongamos a la pag*/
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
     }
 
 /*Esto para el logo con el texto de Do-Heal*/

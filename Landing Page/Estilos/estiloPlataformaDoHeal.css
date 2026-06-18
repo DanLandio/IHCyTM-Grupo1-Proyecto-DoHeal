@@ -40,6 +40,11 @@ nav.active {
     display: flex;
 }
 
+#logo-doheal {
+    cursor: pointer;
+    flex: 0 0 auto;
+}
+
 .hamburguesa.active {
     background-color: #60A5FA;
 }
