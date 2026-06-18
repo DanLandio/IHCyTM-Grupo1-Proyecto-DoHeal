@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documento</title>
+    <link rel="stylesheet" href="../Estilos/estiloComplementoDoHeal.css">
+    <link rel="stylesheet" href="../Estilos/estiloPlataformaDoHeal.css">
+    <script src="../Scripts/scriptPlataforma.js"></script>
+    <script src="../Scripts/scriptPlataformaVistas.js"></script>
+    <script src="../Scripts/scriptListadoElementos.js"></script>
+</head>
+
+<body>
+    <header class="header-plataforma">
+        <div class="elementos-header-plataforma">
+            
+            <div class="izquierda">
+                <button class="hamburguesa" id="boton-hamburguesa" onclick="abreMenuHamburguesa()">
+                ☰
+                </button>
+                <img src="../Recursos/Imagenes/logo-doheal-blanco-cortado.png" style="width: 4rem; height: auto;">
+                <h2>Do-Heal</h2>
+            </div>
+            <div class="centrado">
+                <h1>Busqueda</h1>
+            </div>
+            <div class="derecha">
+                <h2>Jorge</h2>
+                <img src="../Recursos/Iconos/campana.svg" style="width: 2rem; height: auto;">
+                <img src="../Recursos/Iconos/engranaje.svg" style="width: 2rem; height: auto;">
+            </div>
+        </div>
+        
+
+        <nav id="menu-hamburguesa">
+            <a href="../Estructuras/vistaPlataformaInicio.html">
+                <img src="../Recursos/Iconos/casa.svg" class="icono">
+                Inicio
+            </a>
+            <a href="../Estructuras/vistaPlataformaSalud.html">
+                <img src="../Recursos/Iconos/pildora.svg" class="icono">
+                Salud
+            </a>
+            <a href="../Estructuras/vistaPlataformaBusqueda.html">
+                <img src="../Recursos/Iconos/lupa.svg" class="icono">
+                Buscar
+            </a>
+            <a href="../Estructuras/vistaPlataformaSolicitudes.html">
+                <img src="../Recursos/Iconos/correo.svg" class="icono">
+                Solicitudes
+            </a>
+            <a href="../Estructuras/vistaPlataformaPerfil.html">
+                <img src="../Recursos/Iconos/usuario.svg" class="icono">
+                Perfil
+            </a>
+        </nav>
+        
+        </header>
+        
+    <section class="seccion-plataforma">
+        <div class="division-vistas ordenar-horizontal">
+            <button id="boton-vista-medicina" onclick="cambiarVista('vista-medicina','boton-vista-medicina')">Medicinas</button>
+            <button id="boton-vista-pacientes" onclick="cambiarVista('vista-pacientes','boton-vista-pacientes')">Pacientes</button>
+        </div>
+        <div class="barra-busqueda">
+            <input type="text" placeholder="Presione aca y escriba algo..." />
+            <button><img class="icono" src="../Recursos/Iconos/lupa.svg"></button>
+        </div>
+        <!--------------------------------------------------->
+        <section class="vista seccion-interna" id="vista-medicina">
+            <hr>
+            <div class="contenedor-horizontal">
+            <h1 class="espaciado">Medicamentos disponibles</h1>
+            </div>
+            <div class="contenedor-plataforma cuadricula" id="contenedor-busqueda-medicinas">
+                <template id="plantilla-busqueda-medicinas">
+                <div class="elemento-cuadricula">
+                    <img data-i="imagen" class="elemento-img" src="../Recursos/Imagenes/logo-doheal.png">
+                    <h3 data-i="nombreMedicamento" class="elemento-titulo">Medicina</h3>
+                        <div class="elemento-texto">
+                            <p data-i="publicador">Publicador</p>
+                            <p data-i="ubicacion">Lugar</p>
+                            <p data-i="caduca">Caduca</p>
+                        </div>
+                        <div class="elemento-accion">
+                            <button>Solicitar</button>
+                        </div>
+                    
+                </div>
+                </template>
+                <script>mostrarLista(busquedaMedicinas, 'plantilla-busqueda-medicinas', 'contenedor-busqueda-medicinas')</script>
+            </div>
+        </section>
+        <!--------------------------------------------------->
+        <section class="vista seccion-interna" id="vista-pacientes">
+            <hr>
+            <div class="contenedor-horizontal">
+            <h1 class="espaciado">Pacientes que necesitan medicinas</h1>
+            </div>
+            <div class="contenedor-plataforma listado" id="contenedor-busqueda-pacientes">
+                <template id="plantilla-busqueda-pacientes">
+                <div class="elemento-listado">
+                    <img data-i="imagen" class="elemento-img" src="../Recursos/Imagenes/logo-doheal.png">
+                    <div class="elemento-texto">
+                    <h3 data-i="nombre" class="elemento-titulo">Nombre</h3>
+                    <p data-i="ubicacion">Lugar</p>
+                    <p data-i="solicita">Medicamento</p>
+                    <p data-i="diagnostico">Diagnostico</p>
+                    </div>
+                    <div class="elemento-accion">
+                        <button>Contactar</button>
+                    </div>
+                </div>
+                </template>
+                <script>mostrarLista(busquedaPacientes, 'plantilla-busqueda-pacientes', 'contenedor-busqueda-pacientes')</script>
+            </div>
+        </section>
+
+    </section>
+
+
+    <script>
+        const parametrosLink = new URLSearchParams(window.location.search);
+        const vista = parametrosLink.get("vista")
+        if (vista == "pacientes"){
+            cambiarVista('vista-pacientes','boton-vista-pacientes')
+        }
+        else{
+            cambiarVista('vista-medicina','boton-vista-medicina')
+        }
+    </script>
+</body>
+
+</html>
