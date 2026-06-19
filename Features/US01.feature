@@ -1,4 +1,3 @@
-
 Feature: Registro de recetas medicas
     Como paciente que necesita medicamentos
     Quiero registrar mi receta en la plataforma
@@ -16,5 +15,5 @@ Scenario Outline: Registro de receta correcto
 
 Examples:
     | medicamento | cantidad | dosis |
-    | Paracetamol | 20 | 500mg |
-    | Ibuprofeno | 10 | 200mg |
+    | Paracetamol | 20       | 500mg |
+    | Ibuprofeno   | 10       | 200mg |
