@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
     formIniciarSesion.addEventListener("submit", (e)=> {
         e.preventDefault();
         alert("Inicio de sesion exitoso");
-        window.location.href ="../Estructuras/vistaPlataformaInicio.html";
+        window.location.href ="Landing Page/Estructuras/vistaPlataformaInicio.html";
     });
     
 });

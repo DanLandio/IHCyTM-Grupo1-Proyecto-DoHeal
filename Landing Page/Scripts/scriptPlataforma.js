@@ -7,6 +7,6 @@ document.addEventListener("DOMContentLoaded", () =>{
     const logoBoton = document.getElementById("logo-doheal");
 
     logoBoton.addEventListener("click", () => {
-        document.location.href = "../Estructuras/index.html"
+        document.location.href = "../../index.html"
     })
 })
