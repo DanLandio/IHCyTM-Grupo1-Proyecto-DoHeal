@@ -47,6 +47,11 @@ nav.active {
     right: 3rem;
 }
 
+#boton-notificaciones {
+    position: relative;
+}
+
+
 #logo-doheal {
     cursor: pointer;
     flex: 0 0 auto;
@@ -332,8 +337,8 @@ nav.active {
 
 
 .elemento-img {
-    height: auto;
-    width: 120px;
+    height: 120px;
+    width: auto;
     object-fit: cover;
     grid-area: img;
     justify-self: center;
@@ -684,7 +689,7 @@ nav.active {
     flex-direction: column;
     gap: 8px;
 }
-.emergente-contenido form input, .emergente-contenido form textarea {
+.emergente-contenido form input, .emergente-contenido form textarea, .emergente-contenido form select {
     border-radius: 12px;
     border: none;
     padding: 8px;
@@ -713,7 +718,10 @@ nav.active {
     font-weight: bold;
 
 }
-
+.emergente-horizontal {
+    display: flex;
+    flex-direction: row;
+}
 .emergente-cerrar {
     position: absolute;
     top: 10px;
@@ -769,8 +777,25 @@ nav.active {
     top: 4px;
     right: 4px;
 }
-
-
+.notificacion-contador {
+    position: absolute;
+    display: flex;
+    bottom: 0px;
+    right: 0px;
+    width: 1.5rem;
+    height: 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background:white;
+    color: #2563ee;
+}
+#boton-notificaciones.active .notificacion-contador {
+    display: none;
+}
 
   /* moviles */
 @media (max-width: 480px) {
