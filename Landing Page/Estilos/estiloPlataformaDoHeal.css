@@ -20,7 +20,6 @@ nav {
     padding: 1rem;
     position: absolute;
     background:#2563ee ;
-    margin-left: 1rem;
     border-bottom-left-radius: 12px;
     border-bottom-right-radius: 12px;
 }
@@ -38,6 +37,14 @@ nav a {
 
 nav.active {
     display: flex;
+}
+
+#menu-opciones {
+    left: 1rem;
+}
+
+#menu-notificaciones {
+    right: 3rem;
 }
 
 #logo-doheal {
@@ -86,9 +93,30 @@ nav.active {
 }
 .barra-busqueda input::placeholder {
     color:white;
-
 }
 
+.barra-filtros {
+    display: flex;
+    width: 90%;
+    max-width: 600px;
+    min-width: 300px;
+    margin: 0 auto;
+    margin-top: 8px;
+    border-radius: 12px;
+    gap: 16px;
+    background: #06B6D4;
+}
+.barra-filtros input {
+    flex: 1;
+    color:white;
+    border: none;
+    padding-left: 1rem;
+    background:none;
+    font-size: clamp(0.6rem, 2vw, 1rem);
+}
+.barra-filtros input::placeholder {
+    color:white;
+}
 
 .header-plataforma {
     border-bottom-left-radius: 24px;
@@ -160,6 +188,14 @@ nav.active {
 .ordenar-horizontal {
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.ordenar-vertical {
+    display: flex;
+    flex-direction: column;
     justify-content: space-around;
     flex-wrap: wrap;
     gap: 16px;
@@ -694,6 +730,47 @@ nav.active {
     font-weight: bold;
     font-size: 2rem;
 }
+
+
+
+
+
+
+
+.notificacion {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    gap: 8px;
+    font-size: clamp(0.5rem, 2vw, 1rem);;
+}
+.notificacion-elemento {
+    position: relative;
+    background: #60A5FA;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    align-items: center;
+    padding: 8px;
+    border-radius: 12px;
+}
+.notificacion img {
+    aspect-ratio: 1/1;
+    width: 50px;
+    height: auto;
+    object-fit: cover;
+}
+.notificacion-contenido {
+    display: flex;
+    flex-direction:column;
+    gap: 8px
+}
+.notificacion-elemento .emergente-cerrar{
+    top: 4px;
+    right: 4px;
+}
+
+
 
   /* moviles */
 @media (max-width: 480px) {

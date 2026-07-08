@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../Estilos/estiloPlataformaDoHeal.css">
     <link rel="icon" href="../../favicon.ico">
     <script src="../Scripts/scriptPlataforma.js"></script>
+    <script src="../Scripts/scriptListadoElementos.js"></script>
 </head>
 
 <body>
@@ -15,7 +16,7 @@
         <div class="elementos-header-plataforma">
             
             <div class="izquierda">
-                <button class="hamburguesa" id="boton-hamburguesa" onclick="abreMenuHamburguesa()">
+                <button class="hamburguesa" id="boton-menu" onclick="abreMenuHamburguesa('menu-opciones', 'boton-menu')">
                 ☰
                 </button>
                 <div id="logo-doheal">
@@ -29,13 +30,16 @@
             </div>
             <div class="derecha">
                 <h2>Jorge</h2>
-                <img src="../Recursos/Iconos/campana.svg" style="width: 2rem; height: auto;">
+                <button class="hamburguesa" id="boton-notificaciones" onclick="abreMenuHamburguesa('menu-notificaciones','boton-notificaciones')">
+                    <img src="../Recursos/Iconos/campana.svg" style="width: 2rem; height: auto;">
+                </button>
+                
                 <img src="../Recursos/Iconos/engranaje.svg" style="width: 2rem; height: auto;">
             </div>
         </div>
         
 
-        <nav id="menu-hamburguesa">
+        <nav id="menu-opciones">
             <a href="../Estructuras/vistaPlataformaInicio.html">
                 <img src="../Recursos/Iconos/casa.svg" class="icono">
                 Inicio
@@ -56,6 +60,28 @@
                 <img src="../Recursos/Iconos/usuario.svg" class="icono">
                 Perfil
             </a>
+        </nav>
+
+        <nav id="menu-notificaciones">
+            <div class="notificacion" id="bandeja-notificaciones">
+
+                <template id="plantilla-notificaciones">
+                    <div class="notificacion-elemento">
+                    <button class="emergente-cerrar">&times;</button>
+                    <div>
+                        <img data-i="imagen" src="../Recursos/Imagenes/logo-doheal-cortado.png" class="icono">
+                    </div>
+                    
+                    <div class="notificacion-contenido">
+                        <h3 data-i="titulo" class="sin-titulo">Titulo</h3>
+                        <p data-i="contenido" class="sin-titulo">Lorem ipsum dolor sit amet consectetur adipisicing elit. impedit?</p>
+                        
+                    </div>
+                    
+                </div>
+                </template>
+                <script>mostrarLista(notificaciones, 'plantilla-notificaciones', 'bandeja-notificaciones')</script>
+            </div>
         </nav>
         
         </header>

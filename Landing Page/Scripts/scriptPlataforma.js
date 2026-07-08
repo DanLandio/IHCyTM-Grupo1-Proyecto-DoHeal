@@ -1,6 +1,6 @@
-function abreMenuHamburguesa() {
-    document.getElementById("menu-hamburguesa").classList.toggle("active");
-    document.getElementById("boton-hamburguesa").classList.toggle("active");
+function abreMenuHamburguesa(idMenu, idBoton) {
+    document.getElementById(idMenu).classList.toggle("active");
+    document.getElementById(idBoton).classList.toggle("active");
 }
 
 document.addEventListener("DOMContentLoaded", () =>{

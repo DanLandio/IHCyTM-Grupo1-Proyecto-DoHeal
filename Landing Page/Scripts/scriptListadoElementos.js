@@ -15,7 +15,7 @@ const medicinasRegistradas = [
         nombre: "Ibuprofeno",
         presentacion: "400 mg - Capsulas",
         estado: "Disponible",
-        caduca: "2026-11",
+        caduca: "2026-08",
         lote: "IBU400-202504B",
         descripcion: "Antiinflamatorio no esteroideo indicado para el alivio del dolor, inflamación y fiebre."
     },
@@ -380,6 +380,30 @@ const busquedaMedicinas = [
 ]
 
 
+const notificaciones = [
+    {
+        imagen: "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/067848X.jpg",
+        titulo: "Recordatorio de Dosis",
+        contenido: "Tu proxima dosis de Paracetamol es en 15 minutos"
+    },
+    {
+        imagen: "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/031394X.jpg",
+        titulo: "Solicitud rechazada",
+        contenido: "Sofia Ramirez rechazó tu solicitud de Losartan"
+    },
+    {
+        imagen: "https://images.pexels.com/photos/11462529/pexels-photo-11462529.jpeg",
+        titulo: "Solicitud aceptada",
+        contenido: "Lucia Gomez aceptó tu solicitud de Omeprazol"
+        
+    },
+    {
+        imagen: "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/015814X.jpg",
+        titulo: "Medicina proxima a vencer",
+        contenido: "Tu Ibuprofeno caducará en un mes (08/2026)"
+    }
+]
+
 //Apoyo
 
 function devolverStringClave(clave){
@@ -469,7 +493,7 @@ function mostrarLista(datos, idPlantilla, idContenedor) {
                 }
             }
             else {
-                if (etiqueta.classList.contains("elemento-titulo")){etiqueta.textContent = valor; return;}
+                if (etiqueta.classList.contains("elemento-titulo") || etiqueta.classList.contains("sin-titulo")){etiqueta.textContent = valor; return;}
                 etiqueta.textContent = devolverStringClave(clave)+": " + valor;
             }
 
