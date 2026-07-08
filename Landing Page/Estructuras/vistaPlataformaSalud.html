@@ -90,6 +90,9 @@
                     </div>
                 </div>
                 </template>
+
+
+
                 <script>mostrarLista(dosisRegistradas, 'plantilla-dosis', 'contenedor-dosis')</script>
         </section>
         <!--------------------------------------------------->
@@ -97,10 +100,11 @@
             <hr>
             <div class="contenedor-horizontal">
             <h1 class="espaciado">Medicinas registradas</h1>
-            <button>Registrar medicina</button>
+            <button onclick="abrirModalRegistro('plantilla-registro-medicamento')">Registrar medicina</button>
             </div>
 
             <div class="contenedor-plataforma listado" id="contenedor-medicinas">
+                <!--Plantilla para elemento de lista de medicinas-->
                 <template id="plantilla-medicinas">
                 <div class="elemento-listado">
                     <img data-i="imagen" class="elemento-img" src="../Recursos/Imagenes/logo-doheal.png">
@@ -111,10 +115,89 @@
                     <p data-i="caduca">Caduca</p>
                     </div>
                     <div class="elemento-accion">
-                        <button>Detalles</button>
+                        <button data-i="btn" data-tipo="detalle" data-plantilla="plantilla-detalle-medicamento">Detalles</button>
                     </div>
                 </div>
                 </template>
+
+                <!--Plantilla para ventana emergente de detalles de medicina-->
+                <template id="plantilla-detalle-medicamento">
+                    
+                        <img class="emergente-img" data-i="imagen">
+                        <div class="emergente-titulo">
+                            
+                            <h3>Detalles del medicamento</h3>
+                            <div class="ordenar-horizontal">
+                                <button>Editar</button>
+                                <button class="alterno">Eliminar</button>
+                            </div>
+                        </div>
+                        
+                        <div class="emergente-contenido emergente-detalles">
+                            <div class="emergente-item">
+                                <p>Nombre: </p>
+                                <p data-i="nombre">nombre</p>
+                            </div>
+                            <div class="emergente-item">
+                                <p>Fecha de caducidad: </p>
+                                <p data-i="caduca">fecha</p>
+                            </div>
+                            <div class="emergente-item">
+                                <p>Presentacion: </p>
+                                <p data-i="presentacion">presentacion</p>
+                            </div>
+                            <div class="emergente-item">
+                                <p>Estado: </p>
+                                <p data-i="estado"> estado</p>
+                            </div>
+                            <div class="emergente-item">
+                                <p>Descripcion: </p>
+                                <p data-i="descripcion"> estado</p>
+                            </div>
+                            <div class="emergente-item">
+                                <p>Numero de lote: </p>
+                                <p data-i="lote"></p>
+                            </div>
+                        </div>
+                </template>
+
+
+                <!--Plantilla para ventana emergente de registro de medicinas-->
+                <template id="plantilla-registro-medicamento">
+                    
+                        <img class="emergente-img" src="../Recursos/Imagenes/no-image.png">
+                        <div class="emergente-titulo">
+                            
+                            <h3>Registro de medicina</h3>
+                            <div class="ordenar-horizontal">
+                                <button>Subir Imagen</button>
+                            </div>
+                        </div>
+                        
+                        <div class="emergente-contenido emergente-detalles">
+                            <form>
+                                <div class="emergente-item">
+                                    <label for="nombre">Medicamento:</label>
+                                    <input type="text" name="nombre">
+                                </div>
+                                <div class="emergente-item">
+                                    <label for="lote">Numero de lote:</label>
+                                    <input type="text" name="lote">
+                                </div>
+                                <div class="emergente-item">
+                                    <label for="caduca">Fecha de caducidad:</label>
+                                    <input type="month" name="caduca">
+                                </div>
+                                <div class="emergente-item">
+                                    <label for="descripcion">Descripción:</label>
+                                    <textarea name="descripcion"></textarea>
+                                </div>
+                                <button type="submit">Guardar</button>
+                            </form>
+
+                        </div>
+                </template>
+
                 <script>mostrarLista(medicinasRegistradas, 'plantilla-medicinas', 'contenedor-medicinas')</script>
             </div>
             
@@ -150,11 +233,25 @@
         </section>
     </section>
 
-    <script>
+    <div class="Pantalla-entera fondo-emergente" id="modal">
+        <div class="emergente">
+            <button class="emergente-cerrar" id="modal-cerrar" onclick="cerrarModal()">&times;</button>
+            <div id="modal-contenido" class="emergente-interior">
+
+            </div> 
+            
+        </div> 
+    </div>
+
+        <script>
         const parametrosLink = new URLSearchParams(window.location.search);
         const vista = parametrosLink.get("vista")
+        const modo = parametrosLink.get("modo")
         if (vista == "medicinas"){
-            cambiarVista('vista-medicina','boton-vista-medicina')
+            cambiarVista('vista-medicina','boton-vista-medicina');
+            if (modo == "registrar"){
+                abrirModalRegistro('plantilla-registro-medicamento');
+            }
         }
         else{
             cambiarVista('vista-dosis','boton-vista-dosis')
