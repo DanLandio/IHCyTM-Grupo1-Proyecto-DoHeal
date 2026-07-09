@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
         formIniciarSesion.addEventListener("submit", (e) => {
             e.preventDefault();
             alert("Inicio de sesión exitoso (Simulación). Redirigiendo...");
-            window.location.href = "../Estructuras/vistaPlataformaInicio.html";
+            window.location.href = "Landing Page/Estructuras/vistaPlataformaInicio.html";
         });
     }
 
