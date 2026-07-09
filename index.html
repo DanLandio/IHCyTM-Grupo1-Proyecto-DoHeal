@@ -7,8 +7,6 @@
     <title>Do-Heal</title>
     <!--Es para vincular los estilos(el archivo css) con el archivo vista(el esqueleto html)-->
     <link rel="stylesheet" href="Landing Page/Estilos/estiloBasicoDoHeal.css">
-    <!--icono-->
-    <link rel="icon" href="favicon.ico">
 </head>
 <body>
     <header class="Barra-superior"> <!--Este es el contenedor principal de la cabecera donde va to lo que va en la barra de arriba azul-->
@@ -55,6 +53,17 @@
                     receta médica verificada por profesionales para eliminar cualquier riesgo informal                    
                 </p>
 
+                <div class="Franja-Certificaciones-Hero">
+                    <div class="Certificacion-Item">
+                        <img src="Landing Page/Recursos/Imagenes/Certificado-URAC.png" alt="Sello URAC">
+                        <span>Validación Técnica Sanitaria</span>
+                    </div>
+                    <div class="Certificacion-Item">
+                        <img src="Landing Page/Recursos/Imagenes/Certificado-WCAG.png" alt="Sello WCAG">
+                        <span>Accesibilidad Web Certificada</span>
+                    </div>
+                </div>
+
                 <div class="Seccion-de-abajo-izquierda">
                     <h2 class="Subtitulo">Participa ahora</h2><!--es un subtitulo de segundo nivel, sirve pa nombrar los titulos
                                                                     de cada seccion-->
@@ -66,6 +75,37 @@
                 <img src="Landing Page/Recursos/Imagenes/MedicamentosDonacion.png" alt="Donacion de medicamentos" class="Medicamentos-donados-imagen">
             </div>
 
+        </section>
+
+        <section id="VideoProducto" class="Seccion-Video-Producto">
+            <div class="Contenedor-Texto-Video">
+                <h2 class="Titulo-Video-Seccion">Conoce cómo Do-Heal transforma la donación de medicamentos</h2>
+                <p class="Descripcion-Video-Seccion">
+                    Mira en este breve video about the product de cómo funciona nuestra tecnología de validación de recetas y escaneo 
+                    automatizado para garantizar un intercambio 100% seguro y solidario.
+                </p>
+            </div>
+            
+            <div class="Contenedor-Video-Reproductor">
+                <!-- Usamos la etiqueta estándar de HTML5 con controles interactivos -->
+                <video controls poster="Landing Page/Recursos/Imagenes/MiniaturaVideo.png" class="Video-Elemento">
+                    <source src="Landing Page/Recursos/Videos/about product.mp4" type="video/mp4">
+                    Tu navegador no soporta la reproducción de videos en HTML5.
+                </video>
+            </div>
+        </section>
+
+                <section id="VideoTeam" class="Seccion-Video-Producto">
+            <div class="Contenedor-Texto-Video">
+                <h2 class="Titulo-Video-Seccion">Conoce cómo el equipo de Do-Heal desarrolló la plataforma</h2>
+            </div>
+            
+            <div class="Contenedor-Video-Reproductor">
+                <!-- Usamos la etiqueta estándar de HTML5 con controles interactivos -->
+                <iframe src="https://www.youtube.com/embed/QA4yCqM0ERU" class="Video-Youtube">
+                </iframe>
+
+            </div>
         </section>
 
         <section id="SobreNosotros" class="Seccion-Sobre-Nosotros"><!--el id es un identificador unico que puede servir pa llamarlo 
@@ -93,7 +133,7 @@
                 </div>    
             </div>
 
-            <div class="Fila-SobreNosotros-Invertido">
+            <div class="Bloque-SobreNosotros-Invertido">
                 <div class="Imagenes-SobreNosotros">
                     <img src="Landing Page/Recursos/Imagenes/Medicamentos-Entregados.webp" alt="Mision Do-Heal" class="SobreNosotros-Imagen">
                 </div>    
@@ -101,7 +141,8 @@
                     <h3 class="Subtitulo-SobreNosotros">¿Cuál es nuestra misión?</h3>
                     <p class="Texto-SobreNosotros">
                         Con nuestra plataforma Do-Heal, nuestra misión es facilitar el acceso
-                        a medicamentos mediante donaciones
+                        a medicamentos mediante un sistema digital y colaborativo de donaciones
+                        seguras
                     </p>
                     <p class="Texto-SobreNosotros">
                         Con esto, podemos ayudar a los pacientes a seguir su tratamiento, mientras
@@ -120,37 +161,40 @@
             <div class="Bloques-de-ComoFunciona">
 
                 <div class="Bloque-ComoFunciona Registro-Escalon1">
+                    <div class="Indicador-Numero">1</div>
                     <div class="Imagenes-ComoFunciona">
                         <img src="Landing Page/Recursos/Imagenes/Dibujo-De-Medicina.jpg" alt="Escalon1" class="ComoFunciona-Imagen">   
                     </div>
                     <div class="Bloque-TextoComoFunciona">
-                        <h3 class="Subtitulo-ComoFunciona">1. Registro</h3>
+                        <h3 class="Subtitulo-ComoFunciona">Registro Digital</h3>
                         <p class="Descripcion-ComoFunciona">
-                            Registra una receta o un medicamento en la plataforma                            
+                            Registra una receta o un medicamento excedente de forma rápida en la plataforma                            
                         </p>
                     </div>
                 </div>
                 
                 <div class="Bloque-ComoFunciona Validación-Escalon2">
+                    <div class="Indicador-Numero">2</div>
                     <div class="Imagenes-ComoFunciona">
                         <img src="Landing Page/Recursos/Imagenes/Dibujo-Validacion.jpg" alt="Escalon2" class="ComoFunciona-Imagen">   
                     </div>
                     <div class="Bloque-TextoComoFunciona">
-                        <h3 class="Subtitulo-ComoFunciona">2. Validación</h3>
+                        <h3 class="Subtitulo-ComoFunciona">Validación Técnica</h3>
                         <p class="Descripcion-ComoFunciona">
-                            Espera a que nuestros sistemas verifiquen su autenticidad
+                            Nuestro sistema comprueba la autenticidad del lote, la caducidad y la receta médica adjunta.
                         </p>
                     </div>
                 </div>
 
                 <div class="Bloque-ComoFunciona Coordinacion-Escalon3">
+                    <div class="Indicador-Numero">3</div>
                     <div class="Imagenes-ComoFunciona">
                         <img src="Landing Page/Recursos/Imagenes/Dibujo-Coordinacion.jpg" alt="Escalon3" class="ComoFunciona-Imagen">   
                     </div>
                     <div class="Bloque-TextoComoFunciona">
-                        <h3 class="Subtitulo-ComoFunciona">3. Coordinación</h3>
+                        <h3 class="Subtitulo-ComoFunciona">Coordinación Segura</h3>
                         <p class="Descripcion-ComoFunciona">
-                            Coordina con otros usuario para la entrega o recojo
+                            Comunícate de forma privada con el otro usuario verificado para pactar la entrega en postas locales.
                         </p>
                     </div>
                 </div>
@@ -245,7 +289,7 @@
         <section id="Contacto" class="Seccion-Contacto">
             <h2 class="Titulo-Contacto">Contacto</h2>
             <p class="Texto-Informativo-Contacto">
-                Comunícate con nosotros mediante estos canales
+                Comunícate con nosotros mediante nuestros canales oficiales de atención
             </p>
             <div class="Bloque-Canales">
                 <div class="Cuadro-Canales Cuadro-Azul">
@@ -284,14 +328,14 @@
 
                 <h2 class="Titulo-Formulario">Iniciar Sesión</h2>
 
-                <form id="Form-IniciarSesion" class="Modelo-Formulario Activo">
+                <form id="FormIniciarSesion" class="Modelo-Formulario Activo">
                     <div class="Campo-Grupo">
                         <label for="LoginCorreo">Correo Electrónico</label>
-                        <input type="email" id="LoginCorreo" name="ejemplo@dominio.com" required>
+                        <input type="email" id="LoginCorreo" placeholder="ejemplo@dominio.com" required>
                     </div>
                     <div class="Campo-Grupo">
                         <label for="LoginPassword">Contraseña</label>
-                        <input type="password" id="LoginPassword" name="**********" required>
+                        <input type="password" id="LoginPassword" placeholder="**********" required>
                     </div>
                     <button type="submit" class="Btn-Form-Accion Btn-Azul">Ingresar al Sistema</button>
                 </form>
@@ -308,7 +352,7 @@
 
                 <h2 class="Titulo-Formulario">Registrar Cuenta</h2>
 
-                <form id="Form-Registrarse" class="Modelo-Formulario Activo">
+                <form id="FormRegistrarse" class="Modelo-Formulario Activo">
                     <div class="Campo-Grupo">
                         <label for="RegistrarNombre">Nombres Completos</label>
                         <input type="text" id="RegistrarNombre" placeholder="Juan Perez" required>
@@ -316,11 +360,11 @@
                     <div class="Campo-Grupo">
                         <label for="RegistrarDNI">DNI (Documento de Identidad)</label>
                         <input type="text" 
-                                id="RegistrarDNI" 
-                                placeholder="12345678"
-                                inputmode="numeric" 
-                                maxlength="8"
-                                required><!--el input type es el campo de entrada de datos, sirve pa que el usuario escriba su
+                               id="RegistrarDNI" 
+                               placeholder="12345678"
+                               inputmode="numeric" 
+                               maxlength="8"
+                               required><!--el input type es el campo de entrada de datos, sirve pa que el usuario escriba su
                                             informacion como su nombre o contraseña dentro del formulario-->
                         <span id="ErrorDni" class="Mensaje-Error-DNI">El DNI debe contener exactamente 8 numeros</span>
                     </div>
