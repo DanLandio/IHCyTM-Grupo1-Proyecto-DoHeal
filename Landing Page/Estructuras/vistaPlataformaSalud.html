@@ -172,17 +172,17 @@
                         <div class="emergente-contenido emergente-detalles">
                             <form>
                                 <div class="emergente-item">
-                                    <label for="nombre">Medicamento:</label>
-                                    <input type="text" name="nombre">
+                                    <label for="dosis-nombre">Medicamento:</label>
+                                    <input id="dosis-nombre" type="text" name="dosis-nombre">
                                 </div>
                                 <div class="emergente-item">
-                                    <label for="lote">Dosis:</label>
-                                    <input type="text" name="dosis">
+                                    <label for="dosis-dosis">Dosis:</label>
+                                    <input id="dosis-dosis" type="text" name="dosis-dosis">
                                 </div>
                                 <div class="emergente-item">
-                                    <label for="intervalo-cantidad">Intervalo:</label>
+                                    <label for="dosis-intervalo">Intervalo:</label>
                                     <div class="emergente-horizontal">
-                                        <input type="number" min="1" name="intervalo-cantidad">
+                                        <input type="number" min="1" id="dosis-intervalo" name="dosis-intervalo">
                                         <select name="intervalo-unidad">
                                         <option>Minutos</option>
                                         <option>Horas</option>
@@ -283,20 +283,23 @@
                         <div class="emergente-contenido emergente-detalles">
                             <form>
                                 <div class="emergente-item">
-                                    <label for="nombre">Medicamento:</label>
-                                    <input type="text" name="nombre">
+                                    <label for="medicina-nombre">Medicamento:</label>
+                                    <input type="text" id="medicina-nombre" name="nombre">
                                 </div>
+
                                 <div class="emergente-item">
-                                    <label for="lote">Numero de lote:</label>
-                                    <input type="text" name="lote">
+                                    <label for="medicina-lote">Número de lote:</label>
+                                    <input type="text" id="medicina-lote" name="lote">
                                 </div>
+
                                 <div class="emergente-item">
-                                    <label for="caduca">Fecha de caducidad:</label>
-                                    <input type="month" name="caduca">
+                                    <label for="medicina-caduca">Fecha de caducidad:</label>
+                                    <input type="month" id="medicina-caduca" name="caduca">
                                 </div>
+
                                 <div class="emergente-item">
-                                    <label for="descripcion">Descripción:</label>
-                                    <textarea name="descripcion"></textarea>
+                                    <label for="medicina-descripcion">Descripción:</label>
+                                    <textarea id="medicina-descripcion" name="descripcion"></textarea>
                                 </div>
                                 <button type="submit">Guardar</button>
                             </form>
@@ -392,39 +395,39 @@
                         <div class="emergente-contenido emergente-detalles">
                             <form>
                                 <div class="emergente-item">
-                                    <label for="nombre">Medicamento:</label>
-                                    <input type="text" name="nombre">
+                                    <label for="receta-nombre">Medicamento:</label>
+                                    <input type="text" id="receta-nombre" name="nombre">
                                 </div>
                                 <div class="emergente-item">
-                                    <label for="dosis">Dosis:</label>
-                                    <input type="text" name="dosis">
+                                    <label for="receta-dosis">Dosis:</label>
+                                    <input type="text" id="receta-dosis" name="dosis">
                                 </div>
                                 <div class="emergente-item">
-                                    <label for="frecuencia">Frecuencia:</label>
+                                    <label for="receta-frecuencia-cantidad">Frecuencia:</label>
                                     <div class="emergente-horizontal">
-                                        <input type="number" min="1" name="frecuencia-cantidad">
-                                        <select name="frecuencia-unidad">
-                                        <option>Minutos</option>
-                                        <option>Horas</option>
-                                        <option>Dias</option>
-                                        <option>Semanas</option>
-                                    </select>
+                                        <input type="number" min="1" id="receta-frecuencia-cantidad" name="frecuencia-cantidad">
+                                        <select id="receta-frecuencia-unidad" name="frecuencia-unidad">
+                                            <option>Minutos</option>
+                                            <option>Horas</option>
+                                            <option>Dias</option>
+                                            <option>Semanas</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="emergente-item">
-                                    <label for="duracion">Duracion:</label>
+                                    <label for="receta-duracion-cantidad">Duracion:</label>
                                     <div class="emergente-horizontal">
-                                        <input type="number" min="1" name="duracion-cantidad">
-                                        <select name="duracion-unidad">
-                                        <option>Dias</option>
-                                        <option>Semanas</option>
-                                        <option>Meses</option>
-                                    </select>
+                                        <input type="number" min="1" id="receta-duracion-cantidad" name="duracion-cantidad">
+                                        <select id="receta-duracion-unidad" name="duracion-unidad">
+                                            <option>Dias</option>
+                                            <option>Semanas</option>
+                                            <option>Meses</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="emergente-item">
-                                    <label for="diagnostico">Diagnostico:</label>
-                                    <input type="text" name="diagnostico">
+                                    <label for="receta-diagnostico">Diagnostico:</label>
+                                    <input type="text" id="receta-diagnostico" name="diagnostico">
                                 </div>
                                 <button type="submit">Guardar</button>
                             </form>

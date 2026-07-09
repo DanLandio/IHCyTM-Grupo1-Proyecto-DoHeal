@@ -253,7 +253,7 @@ nav.active {
 }
 
 .contenedor-horizontal button, .contenedor-vertical button {
-    padding: 4px 16px;
+    padding: 0px 16px;
 }
 
 /*Elementos pestaña inciio*/
@@ -808,9 +808,7 @@ nav.active {
         font-size: 1rem;
     }
 
-    .header-plataforma h2 {
-        display: none;
-    }
+
 
     .elementos-header-plataforma {
         gap: 2px;
@@ -830,7 +828,7 @@ nav.active {
     }
 
     h1 {
-        font-size: 1rem;
+        font-size: 0.75rem;
     }
 
     .emergente-interior{
@@ -848,8 +846,22 @@ nav.active {
         flex-direction: column;
         gap: 0;
     }
+    .emergente-horizontal {
+        flex-direction: column;
+        gap: 4px;
+    }
 }
-
+@media (max-width: 620px) {
+    .header-plataforma h2 {
+        display: none;
+    }
+    h1 {
+        font-size: 1.5rem;
+    }
+    .espaciado {
+        font-size: 1rem;
+    }
+}
 
 /* tablets */
 @media (max-width: 768px) {
@@ -866,9 +878,9 @@ nav.active {
         "contactos"
         "mensajeria";
     }
+
+    .ordenar-horizontal {
+        gap: 8px;
+    }
 }   
 
-/* laptops */
-@media (max-width: 1024px) {
-
-}  
