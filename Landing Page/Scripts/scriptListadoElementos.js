@@ -1,33 +1,41 @@
 //Datos estaticos de ejemplo
 
 const medicinasRegistradas = [
-{
+    {
         imagen: "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/067848X.jpg",
         nombre: "Paracetamol",
         presentacion: "500 mg - Tabletas",
         estado: "Disponible",
-        caduca: "2027-06"
+        caduca: "2027-06",
+        lote: "PAR500-202506A",
+        descripcion: "Analgésico y antipirético utilizado para aliviar dolores leves a moderados y reducir la fiebre."
     },
     {
         imagen: "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/015814X.jpg",
         nombre: "Ibuprofeno",
         presentacion: "400 mg - Capsulas",
         estado: "Disponible",
-        caduca: "2026-11"
+        caduca: "2026-08",
+        lote: "IBU400-202504B",
+        descripcion: "Antiinflamatorio no esteroideo indicado para el alivio del dolor, inflamación y fiebre."
     },
     {
         imagen: "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/071462X.jpg",
         nombre: "Amoxicilina",
         presentacion: "500 mg - Capsulas",
         estado: "Agotado",
-        caduca: "2025-09"
+        caduca: "2025-09",
+        lote: "AMX500-202409C",
+        descripcion: "Antibiótico de amplio espectro utilizado para tratar infecciones bacterianas bajo indicación médica."
     },
     {
         imagen: "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/013075X.jpg",
         nombre: "Loratadina",
         presentacion: "10 mg - Tabletas",
         estado: "Disponible",
-        caduca: "2028-03"
+        caduca: "2028-03",
+        lote: "LOR10-202601D",
+        descripcion: "Antihistamínico utilizado para el alivio de síntomas asociados a alergias como estornudos, picazón y congestión."
     }
 ]
 
@@ -372,6 +380,30 @@ const busquedaMedicinas = [
 ]
 
 
+const notificaciones = [
+    {
+        imagen: "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/067848X.jpg",
+        titulo: "Recordatorio de Dosis",
+        contenido: "Tu proxima dosis de Paracetamol es en 15 minutos"
+    },
+    {
+        imagen: "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/031394X.jpg",
+        titulo: "Solicitud rechazada",
+        contenido: "Sofia Ramirez rechazó tu solicitud de Losartan"
+    },
+    {
+        imagen: "https://images.pexels.com/photos/11462529/pexels-photo-11462529.jpeg",
+        titulo: "Solicitud aceptada",
+        contenido: "Lucia Gomez aceptó tu solicitud de Omeprazol"
+        
+    },
+    {
+        imagen: "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/015814X.jpg",
+        titulo: "Medicina proxima a vencer",
+        contenido: "Tu Ibuprofeno caducará en un mes (08/2026)"
+    }
+]
+
 //Apoyo
 
 function devolverStringClave(clave){
@@ -388,22 +420,63 @@ function devolverStringClave(clave){
     return texto;
 }
 
-//Funcion
+//Funciones
+
+function abrirModalRegistro(idPlantilla){
+    const plantilla = document.getElementById(idPlantilla);
+    const nodo = plantilla.content.cloneNode(true);
+
+    const modalContenido = document.getElementById("modal-contenido");
+    console.log(modalContenido);
+    console.log(nodo);
+    modalContenido.replaceChildren(nodo);
+    const modal = document.getElementById("modal");
+    modal.classList.add("activo");
+}
+
+function abrirModalDetalles(dato, idPlantilla) {
+    const plantilla = document.getElementById(idPlantilla);
+    const nodo = plantilla.content.cloneNode(true);
+
+    nodo.querySelectorAll("[data-i]").forEach(etiqueta =>{
+        const clave = etiqueta.dataset.i;
+        const valor = dato[clave];
+        if (etiqueta.tagName === "IMG") {
+        etiqueta.src = valor;
+        etiqueta.onerror = () =>{
+                etiqueta.src = "../Recursos/Imagenes/no-image.png";
+            }
+        }
+        else if (etiqueta.tagName === "A") {
+            etiqueta.href = valor;
+        }
+        else {
+            etiqueta.textContent = valor;
+        }
+    })
+
+    const modalContenido = document.getElementById("modal-contenido");
+    modalContenido.replaceChildren(nodo);
+    const modal = document.getElementById("modal");
+    modal.classList.add("activo");
+}
+
+function cerrarModal(){
+    const modal = document.getElementById("modal");
+    modal.classList.remove("activo");
+}
+
 
 function mostrarLista(datos, idPlantilla, idContenedor) {
-
     const plantilla = document.getElementById(idPlantilla);
     const contenedor = document.getElementById(idContenedor);
-
     datos.forEach(item => {
-
         const nodo = plantilla.content.cloneNode(true);
-
         Object.entries(item).forEach(([clave, valor]) => {
-
-        nodo.querySelectorAll(`[data-i="${clave}"]`)
-            .forEach(etiqueta => {
-
+        nodo.querySelectorAll("[data-i]").forEach(etiqueta => {
+            const clave = etiqueta.dataset.i;
+            const valor = item[clave] ?? "";
+            
             if (etiqueta.tagName === "IMG") {
                 etiqueta.src = valor;
                 etiqueta.onerror = () =>{
@@ -413,8 +486,14 @@ function mostrarLista(datos, idPlantilla, idContenedor) {
             else if (etiqueta.tagName === "A") {
                 etiqueta.href = valor;
             }
+            else if (etiqueta.tagName === "BUTTON"){
+                console.log("boton", etiqueta.dataset)
+                etiqueta.onclick = () => {
+                    abrirModalDetalles(item,etiqueta.dataset.plantilla)
+                }
+            }
             else {
-                if (etiqueta.classList.contains("elemento-titulo")){etiqueta.textContent = valor; return;}
+                if (etiqueta.classList.contains("elemento-titulo") || etiqueta.classList.contains("sin-titulo")){etiqueta.textContent = valor; return;}
                 etiqueta.textContent = devolverStringClave(clave)+": " + valor;
             }
 
@@ -426,4 +505,4 @@ function mostrarLista(datos, idPlantilla, idContenedor) {
 
     });
 
-    }
+}

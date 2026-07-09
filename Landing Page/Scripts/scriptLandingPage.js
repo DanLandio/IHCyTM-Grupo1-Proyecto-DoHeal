@@ -13,8 +13,8 @@ document.addEventListener("DOMContentLoaded", ()=>{
     const btnUneteDoHeal = document.getElementById("Btn-Unete-Do-Heal")
     const btnEmpezarAhora = document.getElementById("Btn-Empezar-Ahora");
 
-    const formRegistrarse = document.getElementById("Form-Registrarse");
-    const formIniciarSesion = document.getElementById("Form-IniciarSesion")
+    const formRegistrarse = document.getElementById("FormRegistrarse");
+    const formIniciarSesion = document.getElementById("FormIniciarSesion");
     const inputDNI = document.getElementById("RegistrarDNI");
     const errorDNI = document.getElementById("ErrorDni");
 
@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
     });
 
 
-    formRegistrarse.addEventListener("submit", (e) => {
+    FormRegistrarse.addEventListener("submit", (e) => {
         const regexDNI = /^\d{8}$/; //evalua que sean exactamente 8 numeros
 
         if (!regexDNI.test(inputDNI.value)) {
@@ -71,15 +71,17 @@ document.addEventListener("DOMContentLoaded", ()=>{
             errorDNI.style.display = "none";
             inputDNI.style.borderColor = "#cbd5e1"
             alert("Registro enviado exitosamente (Simulacion)");
-        }
+          }
     });   
 
             //Aqui agregaremos las funciones y la logica interactiva mas
-    formIniciarSesion.addEventListener("submit", (e)=> {
-        e.preventDefault();
-        alert("Inicio de sesion exitoso");
-        window.location.href ="Landing Page/Estructuras/vistaPlataformaInicio.html";
-    });
-    
-});
 
+            if (formIniciarSesion) {
+        formIniciarSesion.addEventListener("submit", (e) => {
+            e.preventDefault();
+            alert("Inicio de sesión exitoso (Simulación). Redirigiendo...");
+            window.location.href = "Landing Page/Estructuras/vistaPlataformaInicio.html";
+        });
+    }
+
+});

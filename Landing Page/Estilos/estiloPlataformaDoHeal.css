@@ -20,7 +20,6 @@ nav {
     padding: 1rem;
     position: absolute;
     background:#2563ee ;
-    margin-left: 1rem;
     border-bottom-left-radius: 12px;
     border-bottom-right-radius: 12px;
 }
@@ -39,6 +38,19 @@ nav a {
 nav.active {
     display: flex;
 }
+
+#menu-opciones {
+    left: 1rem;
+}
+
+#menu-notificaciones {
+    right: 3rem;
+}
+
+#boton-notificaciones {
+    position: relative;
+}
+
 
 #logo-doheal {
     cursor: pointer;
@@ -86,9 +98,30 @@ nav.active {
 }
 .barra-busqueda input::placeholder {
     color:white;
-
 }
 
+.barra-filtros {
+    display: flex;
+    width: 90%;
+    max-width: 600px;
+    min-width: 300px;
+    margin: 0 auto;
+    margin-top: 8px;
+    border-radius: 12px;
+    gap: 16px;
+    background: #06B6D4;
+}
+.barra-filtros input {
+    flex: 1;
+    color:white;
+    border: none;
+    padding-left: 1rem;
+    background:none;
+    font-size: clamp(0.6rem, 2vw, 1rem);
+}
+.barra-filtros input::placeholder {
+    color:white;
+}
 
 .header-plataforma {
     border-bottom-left-radius: 24px;
@@ -165,6 +198,14 @@ nav.active {
     gap: 16px;
 }
 
+.ordenar-vertical {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
 
 .division-vistas {
     display: flex;
@@ -212,7 +253,7 @@ nav.active {
 }
 
 .contenedor-horizontal button, .contenedor-vertical button {
-    padding: 4px 16px;
+    padding: 0px 16px;
 }
 
 /*Elementos pestaña inciio*/
@@ -296,8 +337,8 @@ nav.active {
 
 
 .elemento-img {
-    height: auto;
-    width: 120px;
+    height: 120px;
+    width: auto;
     object-fit: cover;
     grid-area: img;
     justify-self: center;
@@ -438,14 +479,14 @@ nav.active {
     padding: 8px;
     max-height: 240px;
 }
-.perfil-tratamientos-lista::-webkit-scrollbar {
+::-webkit-scrollbar {
     background: #f5f7f5;
     color: #2563ee;
     border-radius: 12px;
     border: 2px solid transparent;
     background-clip: content-box;
 }
-.perfil-tratamientos-lista::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
     background: #2563ee;
     border-radius: 12px;
 }
@@ -574,6 +615,188 @@ nav.active {
     cursor: pointer;
 }
 
+
+
+
+.fondo-emergente {
+    display: none;
+    background: rgba(0, 0, 0, 0.5); 
+    backdrop-filter: blur(4px); 
+    z-index: 2000; 
+}
+
+.fondo-emergente.activo {
+    display: flex;
+}
+
+.emergente {
+    background: #f5f7f5;
+    border-radius: 12px;
+    padding:8px;
+    position: relative;
+    width: min(70%,80vh);
+    max-width: 800px;
+    max-height: 80vh;
+
+}
+
+.emergente-interior {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+    "img titulo"
+    "contenido contenido";
+    gap: 1rem;
+    max-height: 80vh;
+    overflow: hidden;
+}
+
+.emergente-img {
+    grid-area: img;
+    width: 70%;
+    height: auto;
+    max-width: 200px;
+    object-fit: cover;
+    justify-self: center;
+    align-self: center;
+}
+
+.emergente-titulo {
+    grid-area: titulo;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 1rem;
+    padding: 8px;
+}
+
+.emergente-contenido {
+    grid-area: contenido;
+    display: flex;
+    flex-direction: column;
+    background:#60A5FA;
+    border-radius: 12px;
+    color:white;
+    overflow: auto;
+    min-height: 0px;
+}
+
+.emergente-contenido form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.emergente-contenido form input, .emergente-contenido form textarea, .emergente-contenido form select {
+    border-radius: 12px;
+    border: none;
+    padding: 8px;
+    color: #334155;
+}
+
+.emergente-detalles {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    padding: 2rem;
+    gap: 1rem;
+}
+
+.emergente-item {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+.emergente-item *{
+    text-align: left;
+    flex: 2;
+}
+.emergente-item *:first-child {
+    flex:1;
+    font-weight: bold;
+
+}
+.emergente-horizontal {
+    display: flex;
+    flex-direction: row;
+}
+.emergente-cerrar {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    height: 36px;
+    width: 36px;
+    aspect-ratio: 1/1;
+    display: flex;
+    padding: 8px;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    color: #2563ee;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+
+
+
+
+
+
+.notificacion {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    gap: 8px;
+    font-size: clamp(0.5rem, 2vw, 1rem);;
+}
+.notificacion-elemento {
+    position: relative;
+    background: #60A5FA;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    align-items: center;
+    padding: 8px;
+    border-radius: 12px;
+}
+.notificacion img {
+    aspect-ratio: 1/1;
+    width: 50px;
+    height: auto;
+    object-fit: cover;
+}
+.notificacion-contenido {
+    display: flex;
+    flex-direction:column;
+    gap: 8px
+}
+.notificacion-elemento .emergente-cerrar{
+    top: 4px;
+    right: 4px;
+}
+.notificacion-contador {
+    position: absolute;
+    display: flex;
+    bottom: 0px;
+    right: 0px;
+    width: 1.5rem;
+    height: 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background:white;
+    color: #2563ee;
+}
+#boton-notificaciones.active .notificacion-contador {
+    display: none;
+}
+
   /* moviles */
 @media (max-width: 480px) {
     nav {
@@ -585,9 +808,7 @@ nav.active {
         font-size: 1rem;
     }
 
-    .header-plataforma h2 {
-        display: none;
-    }
+
 
     .elementos-header-plataforma {
         gap: 2px;
@@ -599,7 +820,7 @@ nav.active {
 
     button {
         padding: 2px 4px;
-        font-size: 0.6rem;
+        font-size: 0.8rem;
     }
 
     .espaciado {
@@ -607,12 +828,40 @@ nav.active {
     }
 
     h1 {
-        font-size: 1rem;
+        font-size: 0.75rem;
     }
 
-
+    .emergente-interior{
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-rows: 1fr;
+        grid-template-areas: 
+        "img"
+        "titulo"
+        "contenido";
+    }
+    .emergente-img {
+        width: 50%;
+    }
+    .emergente-item{
+        flex-direction: column;
+        gap: 0;
+    }
+    .emergente-horizontal {
+        flex-direction: column;
+        gap: 4px;
+    }
 }
-
+@media (max-width: 620px) {
+    .header-plataforma h2 {
+        display: none;
+    }
+    h1 {
+        font-size: 1.5rem;
+    }
+    .espaciado {
+        font-size: 1rem;
+    }
+}
 
 /* tablets */
 @media (max-width: 768px) {
@@ -629,9 +878,9 @@ nav.active {
         "contactos"
         "mensajeria";
     }
+
+    .ordenar-horizontal {
+        gap: 8px;
+    }
 }   
 
-/* laptops */
-@media (max-width: 1024px) {
-
-}  
